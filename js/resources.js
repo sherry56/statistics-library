@@ -357,8 +357,8 @@ const resources = [
       "在线阅读",
       "时间序列"
     ],
-    "updatedAt": "2026-06-05T09:34:40.437Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "时间序列分析与指数分析重点总结",
@@ -384,8 +384,8 @@ const resources = [
       "讲授提纲",
       "速览"
     ],
-    "updatedAt": "2026-05-29T06:49:52.394Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
    "title": "统计学重难点与易混淆点梳理 · 源稿",
@@ -398,8 +398,8 @@ const resources = [
       "源文件",
       "重难点"
     ],
-    "updatedAt": "2026-05-29T12:11:47.666Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
    "title": "统计学知识导图",
@@ -412,8 +412,8 @@ const resources = [
       "思维导图",
       "知识框架"
     ],
-    "updatedAt": "2026-05-29T05:53:11.950Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "《统计学》第 3 版学习指导及能力提升训练",
@@ -439,6 +439,8 @@ const resources = [
     "tags": [
       "教材",
       "PDF"
-    ]
+    ],
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
 ];
