@@ -29,7 +29,7 @@ npm run audit
 | 文件 | 内容 |
 | --- | --- |
 | `index.html` | 导航、小 Hero、教材封面、搜索、分类、最近更新、详情、原生 dialog、页脚 |
-| `js/resources.js` | 35 条资料资源及项目内相对路径，新增已确认的修改时间和可用性标记 |
+| `js/resources.js` | 33 条资料资源及项目内相对路径，新增已确认的修改时间和可用性标记 |
 | `js/library-core.js` | 全局/局部搜索、排序、章节筛选、最近更新、hash 解析的纯函数 |
 | `js/app.js` | DOM 事件、路由、下载演示、Toast、焦点和快捷键 |
 | `js/ui.js` | 复用的按钮、标签、格式颜色和长条资源行模板 |
@@ -115,8 +115,8 @@ npx wrangler d1 execute statistics-library-analytics --remote --command "SELECT 
 
 ## 验证
 
-`npm test`：7 项通过。`npm run audit`：35 条记录、30 个有效原文件、5 个明确标注的缺失文件、9 个 PPTX PDF 预览、静态 DOM selector、动态 Tailwind 类和“无项目外资源路径”检查均通过。
+`npm test`：7 项通过。`npm run audit`：33 条记录、28 个有效原文件、5 个明确标注的缺失文件、9 个 PPTX PDF 预览、静态 DOM selector、动态 Tailwind 类和“无项目外资源路径”检查均通过。
 
 浏览器检查覆盖搜索、快捷关键词、分类、局部查询、章节交集、空态、排序，PPTX 对应 PDF 的原版显示/翻页/缩放/键盘，PDF 原版显示/翻页/缩放，HTML 与 Markdown 阅读，XLSX 的 iframe 路径，下载错误提示、成功下载事件及 Toast。Ctrl+K、/、Escape 实测正常；Cmd+K 保留同一事件逻辑，未在 macOS 实测。
 
-响应式实测：375px 单列、768px 两列、1280px 三列，页面没有横向溢出；375px 下载弹窗内容宽度 342px，无内部横向溢出。正式 `index.html` 入口加载正常，两本封面加载成功，控制台无错误。当前内置浏览器未进入系统原生全屏，已验证 375px 视口下 dialog 铺满视口的回退状态；系统全屏仍需在支持的浏览器验证。没有逐份通读所有 35 个 catalog 记录，也没有验证尚不存在的真实名单后端。
+响应式实测：375px 单列、768px 两列、1280px 三列，页面没有横向溢出；375px 下载弹窗内容宽度 342px，无内部横向溢出。正式 `index.html` 入口加载正常，两本封面加载成功，控制台无错误。当前内置浏览器未进入系统原生全屏，已验证 375px 视口下 dialog 铺满视口的回退状态；系统全屏仍需在支持的浏览器验证。没有逐份通读所有 33 个 catalog 记录，也没有验证尚不存在的真实名单后端。

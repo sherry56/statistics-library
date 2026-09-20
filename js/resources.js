@@ -320,42 +320,17 @@ const resources = [
     "updatedSource": "file-mtime"
   },
   {
-    "title": "统计学基础知识点 · 在线演示",
-    "category": "复习大纲",
-    "format": "HTML",
-    "path": "resources/review/统计学基础知识点-html演示/index.html",
-    "desc": "基础知识点的网页化演示，适合快速浏览。",
-    "tags": [
-      "在线阅读",
-      "1—3章"
-    ],
-    "updatedAt": "2026-05-29T07:39:16.346Z",
-    "updatedSource": "file-mtime"
-  },
-  {
-    "title": "统计学基础知识点 1—3 章",
+    "title": "统计学知识 1—3 章",
     "category": "复习大纲",
     "format": "PDF",
     "path": "resources/review/统计学基础知识点-html演示/统计学重点知识点1-3章.pdf",
-    "desc": "统计学前半部分重点知识的 PDF 版本。",
+    "desc": "统计学第 1—3 章知识点的 PDF 汇总，可在线阅读或下载。",
     "tags": [
       "知识点",
-      "1—3章"
+      "1—3章",
+      "PDF"
     ],
     "updatedAt": "2026-05-29T08:59:26.610Z",
-    "updatedSource": "file-mtime"
-  },
-  {
-    "title": "重难点与易混淆点 · 在线演示",
-    "category": "复习大纲",
-    "format": "HTML",
-    "path": "resources/review/统计学重难点与易混淆点-html演示/index.html",
-    "desc": "用网页形式梳理易错概念与辨析要点。",
-    "tags": [
-      "在线阅读",
-      "易错点"
-    ],
-    "updatedAt": "2026-05-29T12:26:43.809Z",
     "updatedSource": "file-mtime"
   },
   {
@@ -363,7 +338,7 @@ const resources = [
     "category": "复习大纲",
     "format": "PDF",
     "path": "resources/review/统计学重难点与易混淆点-html演示/统计学重难点与易混淆点梳理.pdf",
-    "desc": "重难点、相似概念与易错位置集中梳理。",
+    "desc": "重难点、相似概念与易错位置的 PDF 梳理，可在线阅读或下载。",
     "tags": [
       "重难点",
       "PDF"

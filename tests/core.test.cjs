@@ -10,15 +10,15 @@ const localRosterPath = path.join(root, 'resources/roster.js');
 const rosterPath = fs.existsSync(localRosterPath) ? localRosterPath : path.join(root, 'tests/fixtures/roster.sample.js');
 const roster = vm.runInNewContext(fs.readFileSync(rosterPath, 'utf8') + ';LibraryRoster');
 test('Catalog categories and total', () => {
-  assert.equal(data.length, 35);
-  assert.deepEqual(['课件','题库','复习大纲','教材'].map(category => core.filter(data,{category}).length), [9,12,12,2]);
+  assert.equal(data.length, 33);
+  assert.deepEqual(['课件','题库','复习大纲','教材'].map(category => core.filter(data,{category}).length), [9,12,10,2]);
   assert.equal(core.filter(data,{category:'课程安排'}).length, 0);
   assert.deepEqual(data.filter(item => item.category === '课件').map(item => item.title), ['第一章总论','第二章统计数据搜集','第三章数据特征','第四章时间序列分析','第五章统计指数','第六章统计量与抽样分布','第七章参数估计','第八章假设检验','第九章相关与回归分析']);
 });
 test('Global search covers every field and supports multiple terms', () => {
   assert.equal(core.filter(data,{query:'pptx'}).length, 9);
   assert.equal(core.filter(data,{query:'教材'}).length, 2);
-  assert.equal(core.filter(data,{query:'复习资料'}).length, 12);
+  assert.equal(core.filter(data,{query:'复习资料'}).length, 10);
   assert.equal(core.filter(data,{query:'课程安排'}).length, 0);
   assert.equal(core.filter(data,{query:'两类错误'})[0].title, '第八章假设检验');
   assert.equal(core.filter(data,{query:'第8章 PDF'}).length, 1);
