@@ -13,10 +13,17 @@ const openResourcePaths = new Set([
   'resources/review/统计学基础知识点-html演示/统计学重点知识点1-3章.pdf',
   'resources/review/统计学重难点与易混淆点-html演示/统计学重难点与易混淆点梳理.pdf'
 ]);
+const recentPinnedPaths = new Set(openResourcePaths);
 const isCategoryOpen = category => openCategories.has(category);
 const isResourceOpen = item => !!item && isCategoryOpen(item.category)
   && (item.category !== '复习大纲' || openResourcePaths.has(item.path));
 const openResources = () => resources.filter(isResourceOpen);
+const recentOpenResources = () => {
+  const visible = openResources();
+  const pinned = visible.filter(item => recentPinnedPaths.has(item.path));
+  const latest = LibraryCore.recent(visible, 5).filter(item => !recentPinnedPaths.has(item.path));
+  return [...pinned, ...latest].slice(0, 5);
+};
 let activeCategory = '';
 let activeChapter = '';
 let activeResource = null;
@@ -66,7 +73,7 @@ function renderHome() {
       ? `<a href="#category=${encodeURIComponent(category)}" class="group category-card w-[min(78vw,18rem)] shrink-0 snap-start rounded-card border border-line bg-surface p-5 transition-colors hover:border-brand/40 hover:shadow-hover lg:min-w-0 lg:flex-1 lg:w-auto">${content}</a>`
       : `<div class="category-card w-[min(78vw,18rem)] shrink-0 snap-start rounded-card border border-line bg-soft/60 p-5 opacity-75 lg:min-w-0 lg:flex-1 lg:w-auto" aria-disabled="true" title="${LibraryCore.label(category)}暂未开放">${content}</div>`;
   }).join('');
-  const recentItems = LibraryCore.recent(openResources());
+  const recentItems = recentOpenResources();
   $('#recentList').innerHTML = recentItems.map(item => resourceRow(item, { recent: true })).join('');
   $('#recentList').hidden = !recentItems.length;
   $('#recentEmpty').hidden = !!recentItems.length;
