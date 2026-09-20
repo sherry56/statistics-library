@@ -1,0 +1,5 @@
+/index.html
+  Cache-Control: no-cache, must-revalidate
+
+/assets/library.css
+  Cache-Control: no-cache, must-revalidate
