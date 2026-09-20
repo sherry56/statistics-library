@@ -13,7 +13,9 @@ for (const directory of ['assets', 'js', 'styles', 'functions']) {
 fs.cpSync(path.join(root, 'resources'), path.join(output, 'resources'), {
   recursive: true,
   filter(source) {
-    return path.normalize(source) !== path.join(root, 'resources', 'roster.js');
+    if (path.normalize(source) === path.join(root, 'resources', 'roster.js')) return false;
+    if (path.extname(source).toLowerCase() === '.epub' && fs.statSync(source).size > 25 * 1024 * 1024) return false;
+    return true;
   }
 });
 

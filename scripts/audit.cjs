@@ -12,6 +12,12 @@ assert.ok(!fs.existsSync(publicRosterPath) || fs.existsSync(privateRosterPath), 
 assert.ok(items.every(item => item.category !== '课程安排'), 'Removed category still present in catalog');
 let found = 0, knownMissing = 0, pdfPreviews = 0;
 for (const item of items) {
+  const external = /^https?:\/\//i.test(item.path);
+  if (external) {
+    assert.match(item.path, /^https:\/\//i, 'External resource must use HTTPS: ' + item.title);
+    found++;
+    continue;
+  }
   const exists = fs.existsSync(path.resolve(root,item.path));
   if (item.available === false) { assert.ok(!exists, 'Available again: remove stale availability flag'); knownMissing++; continue; }
   assert.ok(exists, item.path); found++;
@@ -25,7 +31,7 @@ for (const item of items.filter(item => item.format === 'PPTX')) {
 }
 assert.ok(!fs.existsSync(path.join(root, 'readers', 'pptx-slides')), 'Stale PPTX slide images remain');
 for (const item of items.filter(item => item.available !== false)) {
-  assert.ok(!item.path.startsWith('../'), 'External resource path remains: ' + item.path);
+  assert.ok(/^https?:\/\//i.test(item.path) || !item.path.startsWith('../'), 'External resource path remains: ' + item.path);
 }
 const html = fs.readFileSync(path.join(root,'index.html'),'utf8');
 const ids = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(match=>match[1]));
