@@ -1,6 +1,6 @@
 // Every downloadable/readable source lives under ./resources so this folder can be
 // copied to GitHub and published without depending on its parent directory.
-// updatedAt is the observed source-file mtime, not a claimed upload date.
+// updatedAt is the date this resource was published or refreshed in the site catalog.
 const resources = [
   {
     "title": "第一章总论",
@@ -13,8 +13,8 @@ const resources = [
       "课堂课件"
     ],
     "hot": true,
-    "updatedAt": "2026-05-28T11:51:53.135Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "第二章统计数据搜集",
@@ -26,8 +26,8 @@ const resources = [
       "第2章",
       "课堂课件"
     ],
-    "updatedAt": "2026-05-28T11:53:48.940Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "第三章数据特征",
@@ -39,8 +39,8 @@ const resources = [
       "第3章",
       "课堂课件"
     ],
-    "updatedAt": "2026-05-28T11:55:12.637Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "第四章时间序列分析",
@@ -52,8 +52,8 @@ const resources = [
       "第4章",
       "课堂课件"
     ],
-    "updatedAt": "2026-05-28T11:57:48.867Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "第五章统计指数",
@@ -65,8 +65,8 @@ const resources = [
       "第5章",
       "统计指数"
     ],
-    "updatedAt": "2026-05-28T11:57:50.525Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "第六章统计量与抽样分布",
@@ -78,8 +78,8 @@ const resources = [
       "第6章",
       "抽样分布"
     ],
-    "updatedAt": "2026-05-28T11:57:47.053Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "第七章参数估计",
@@ -91,8 +91,8 @@ const resources = [
       "第7章",
       "参数估计"
     ],
-    "updatedAt": "2026-05-28T11:57:54.415Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "第八章假设检验",
@@ -105,8 +105,8 @@ const resources = [
       "假设检验"
     ],
     "hot": true,
-    "updatedAt": "2026-05-28T11:57:54.604Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "第九章相关与回归分析",
@@ -118,8 +118,8 @@ const resources = [
       "第9章",
       "回归分析"
     ],
-    "updatedAt": "2026-05-28T11:57:52.985Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "数苑 · 第一章",
@@ -131,8 +131,8 @@ const resources = [
       "第1章",
       "章节练习"
     ],
-    "updatedAt": "2026-06-09T07:56:34.443Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "数苑 · 第二章",
@@ -144,8 +144,8 @@ const resources = [
       "第2章",
       "章节练习"
     ],
-    "updatedAt": "2026-06-09T08:04:19.912Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "数苑 · 第三章",
@@ -157,8 +157,8 @@ const resources = [
       "第3章",
       "章节练习"
     ],
-    "updatedAt": "2026-06-09T07:35:35.329Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "数苑 · 第四章",
@@ -170,8 +170,8 @@ const resources = [
       "第4章",
       "章节练习"
     ],
-    "updatedAt": "2026-06-09T07:36:10.751Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "数苑 · 第五章",
@@ -183,8 +183,8 @@ const resources = [
       "第5章",
       "章节练习"
     ],
-    "updatedAt": "2026-06-09T07:36:39.457Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "数苑 · 第六章",
@@ -196,8 +196,8 @@ const resources = [
       "第6章",
       "章节练习"
     ],
-    "updatedAt": "2026-06-09T07:37:21.472Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "数苑 · 第七章",
@@ -209,8 +209,8 @@ const resources = [
       "第7章",
       "章节练习"
     ],
-    "updatedAt": "2026-06-09T07:37:47.081Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "数苑 · 第八章",
@@ -222,8 +222,8 @@ const resources = [
       "第8章",
       "章节练习"
     ],
-    "updatedAt": "2026-06-09T07:38:27.206Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "数苑 · 第九章",
@@ -235,8 +235,8 @@ const resources = [
       "第9章",
       "章节练习"
     ],
-    "updatedAt": "2026-06-09T07:38:53.555Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "数苑 · 期末练习",
@@ -249,8 +249,8 @@ const resources = [
       "综合练习"
     ],
     "hot": true,
-    "updatedAt": "2026-06-09T07:39:42.643Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "数苑 · 期末练习 2",
@@ -262,8 +262,8 @@ const resources = [
       "期末",
       "综合练习"
     ],
-    "updatedAt": "2026-06-09T07:40:11.477Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "数苑练习题高错题修正与解析",
@@ -276,8 +276,8 @@ const resources = [
       "详细解析"
     ],
     "hot": true,
-    "updatedAt": "2026-06-15T17:31:08.376Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "统计学考试复习大纲 · 标注版",
@@ -290,8 +290,8 @@ const resources = [
       "标注版"
     ],
     "hot": true,
-    "updatedAt": "2026-06-18T12:16:39.034Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "考试复习资料",
@@ -303,8 +303,8 @@ const resources = [
       "期末",
       "复习"
     ],
-    "updatedAt": "2026-06-18T08:10:44.340Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "统计学讲义",
@@ -316,8 +316,8 @@ const resources = [
       "讲义",
       "公式"
     ],
-    "updatedAt": "2026-06-15T16:04:31.121Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "统计学知识 1—3 章",
@@ -330,8 +330,8 @@ const resources = [
       "1—3章",
       "PDF"
     ],
-    "updatedAt": "2026-05-29T08:59:26.610Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "重难点与易混淆点梳理",
@@ -343,8 +343,8 @@ const resources = [
       "重难点",
       "PDF"
     ],
-    "updatedAt": "2026-05-29T12:38:10.772Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "时间序列分析与指数分析 · 在线演示",
@@ -370,8 +370,8 @@ const resources = [
       "时间序列",
       "指数分析"
     ],
-    "updatedAt": "2026-06-06T07:38:51.013Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
    "title": "统计学前三部分 45 分钟讲授提纲",
@@ -426,8 +426,8 @@ const resources = [
       "PDF",
       "指导书"
     ],
-    "updatedAt": "2026-06-17T07:21:58.708Z",
-    "updatedSource": "file-mtime"
+    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedSource": "site-update"
   },
   {
     "title": "《统计学》第 3 版配套教材",
