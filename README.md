@@ -86,6 +86,24 @@ UI patterns：Primary = `UI.button + UI.primary`；Secondary = `UI.button + UI.s
 - 下载验证现在要求输入 8 位学号和名单中的姓名，名单来自 `教师页面.pdf`（BST200-04）与 `教师页面2.pdf`（BST200-08），共 122 名去重学生；公开部署时名单通过 Cloudflare Pages Secret `ROSTER_JSON` 提供给 `functions/api/verify.js`，不进入公开 GitHub 仓库。
 - 本地名单文件 `resources/roster.js` 已加入 `.gitignore`，仅用于本地核对；公开 Pages 部署使用服务端接口验证。静态资源 URL 本身仍属于公开站点资源，若需要强制阻止绕过下载，还应把文件移至 R2 并由服务端签发短时下载链接。
 
+## 使用统计
+
+站点已接入 Cloudflare D1 统计库：页面加载记录为“首页浏览”，点击“在线阅读”记录为“在线阅读”，名单验证成功并发起下载时记录为“下载点击”。统计事件只保存事件类型、资料路径、资料标题和时间，不保存学号、姓名或 IP；直接访问静态文件不会进入下载点击统计。
+
+首次查看后台前，在本地终端设置管理员令牌（输入过程不会回显）：
+
+```powershell
+npx wrangler pages secret put STATS_ADMIN_TOKEN --project-name statistics-library
+```
+
+然后打开 `https://statistics.huibara.cn/stats.html`，输入该令牌即可查看首页浏览、在线阅读、下载点击、资料明细和最近 100 条记录。统计是前端事件计数，可能受到重复点击或脚本请求影响，不应视为审计级下载证明。
+
+也可以在 Cloudflare D1 控制台或终端查询原始记录：
+
+```powershell
+npx wrangler d1 execute statistics-library-analytics --remote --command "SELECT action, COUNT(*) AS count FROM stats_events GROUP BY action"
+```
+
 ## 已知原有资料问题
 
 “《统计学》第 3 版配套教材”登记的 `resources/textbooks/14549528 ... .pdf` 当前不存在。该条保留在列表，点击阅读/下载会提示联系助教更新文件，并排除在最近更新之外。确认教材文件后可放入该目录并移除 `available: false`。

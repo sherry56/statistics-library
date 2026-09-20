@@ -25,6 +25,19 @@ function showToast(message) {
   clearTimeout(showToast.timer);
   showToast.timer = setTimeout(() => { $('#toast').hidden = true; }, 3500);
 }
+function trackStat(action, item = null) {
+  const payload = JSON.stringify({
+    action,
+    resourceKey: item?.path,
+    resourceTitle: item?.title
+  });
+  try {
+    const sent = navigator.sendBeacon?.('/api/stats', new Blob([payload], { type: 'application/json' }));
+    if (!sent) fetch('/api/stats', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload, keepalive: true }).catch(() => {});
+  } catch {
+    fetch('/api/stats', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload, keepalive: true }).catch(() => {});
+  }
+}
 function fileAvailable(item) {
   if (!isResourceOpen(item)) {
     showToast(`${LibraryCore.label(item?.category || '') || '该分类'}暂未开放，后续会逐步开放。`);
@@ -172,7 +185,7 @@ $('#verifyForm').addEventListener('submit', async event => {
     $('#fieldMessage').classList.add('text-file-pdf');
     $('#studentId').setAttribute('aria-invalid', 'true'); $('#studentName').setAttribute('aria-invalid', 'true'); $('#studentId').focus(); return;
   }
-  // Static prototype: a production deployment should move this match to a server.
+  trackStat('download', activeResource);
   const link = document.createElement('a');
   link.href = encodeURI(activeResource.path); link.download = '';
   document.body.append(link); link.click(); link.remove();
@@ -180,7 +193,7 @@ $('#verifyForm').addEventListener('submit', async event => {
 });
 document.addEventListener('click', event => {
   const read = event.target.closest('[data-read]');
-  if (read) { const index = Number(read.dataset.read); if (fileAvailable(resources[index])) { readerTrigger = read; LibraryReader.open(resources[index]); syncScrollLock(); } return; }
+  if (read) { const index = Number(read.dataset.read); if (fileAvailable(resources[index])) { readerTrigger = read; trackStat('resource_view', resources[index]); LibraryReader.open(resources[index]); syncScrollLock(); } return; }
   const download = event.target.closest('[data-download]');
   if (download) { openModal(Number(download.dataset.download), download); return; }
   const keyword = event.target.closest('[data-keyword]');
@@ -207,3 +220,4 @@ document.addEventListener('keydown', event => {
 });
 window.addEventListener('hashchange', route);
 renderHome(); route();
+trackStat('site_view');

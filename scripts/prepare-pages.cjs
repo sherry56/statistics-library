@@ -7,6 +7,7 @@ fs.rmSync(output, { recursive: true, force: true });
 fs.mkdirSync(output, { recursive: true });
 
 fs.copyFileSync(path.join(root, 'index.html'), path.join(output, 'index.html'));
+fs.copyFileSync(path.join(root, 'stats.html'), path.join(output, 'stats.html'));
 for (const directory of ['assets', 'js', 'styles', 'functions']) {
   fs.cpSync(path.join(root, directory), path.join(output, directory), { recursive: true });
 }

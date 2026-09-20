@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "statistics-library",
+  "compatibility_date": "2026-09-20",
+  "pages_build_output_dir": ".pages-dist",
+  "d1_databases": [
+    {
+      "binding": "STATS_DB",
+      "database_name": "statistics-library-analytics",
+      "database_id": "2369ebaf-4a93-439e-b3bf-5a9a76d7e2c1"
+    }
+  ]
+}

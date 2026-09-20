@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>统计学资料库 · 使用统计</title>
+  <style>
+    :root { color-scheme: light; font-family: "Microsoft YaHei", system-ui, sans-serif; background:#f6f7f4; color:#252925; }
+    body { margin:0; padding:32px 16px 64px; }
+    main { max-width:1100px; margin:auto; }
+    h1 { margin:0 0 8px; font-size:26px; }
+    .muted { color:#747b74; font-size:13px; line-height:1.7; }
+    .panel { background:#fff; border:1px solid #e1e5df; border-radius:12px; padding:20px; margin-top:20px; }
+    form { display:flex; flex-wrap:wrap; gap:10px; }
+    input,button { min-height:40px; border:1px solid #d8dfd9; border-radius:8px; padding:0 12px; font:inherit; }
+    input { flex:1 1 260px; min-width:0; }
+    button { background:#3f6252; border-color:#3f6252; color:#fff; cursor:pointer; }
+    button:hover { background:#304c40; }
+    #message { margin-top:10px; min-height:1.4em; }
+    .cards { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; }
+    .card { background:#f6f7f4; border-radius:10px; padding:16px; }
+    .card strong { display:block; font-size:26px; margin-top:6px; }
+    .table-wrap { overflow:auto; }
+    table { width:100%; border-collapse:collapse; font-size:13px; }
+    th,td { text-align:left; border-bottom:1px solid #e1e5df; padding:10px 8px; white-space:nowrap; }
+    th { color:#747b74; font-weight:500; }
+    @media (max-width:640px) { .cards { grid-template-columns:1fr; } body { padding-top:20px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>统计学资料库 · 使用统计</h1>
+    <p class="muted">仅管理员可查看。统计记录资料库首页浏览、在线阅读按钮和验证成功后的下载点击；不记录学号、姓名或 IP。直接打开静态文件不会出现在下载点击统计中。</p>
+    <section class="panel">
+      <form id="authForm">
+        <label class="sr-only" for="token">管理员令牌</label>
+        <input id="token" type="password" autocomplete="current-password" placeholder="输入 STATS_ADMIN_TOKEN" required />
+        <button type="submit">加载统计</button>
+      </form>
+      <p id="message" class="muted" role="status"></p>
+    </section>
+    <section id="dashboard" hidden>
+      <div class="cards">
+        <div class="card"><span class="muted">首页浏览</span><strong id="siteViews">0</strong></div>
+        <div class="card"><span class="muted">在线阅读</span><strong id="resourceViews">0</strong></div>
+        <div class="card"><span class="muted">下载点击</span><strong id="downloads">0</strong></div>
+      </div>
+      <section class="panel"><h2>资料明细</h2><div class="table-wrap"><table><thead><tr><th>资料</th><th>在线阅读</th><th>下载点击</th><th>最近记录</th></tr></thead><tbody id="resourceRows"></tbody></table></div></section>
+      <section class="panel"><h2>最近记录</h2><div class="table-wrap"><table><thead><tr><th>时间</th><th>事件</th><th>资料</th></tr></thead><tbody id="recentRows"></tbody></table></div></section>
+    </section>
+  </main>
+  <script>
+    const $ = selector => document.querySelector(selector);
+    const labels = { site_view: '首页浏览', resource_view: '在线阅读', download: '下载点击' };
+    let token = '';
+    const safe = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[char]));
+    $('#authForm').addEventListener('submit', async event => {
+      event.preventDefault();
+      token = $('#token').value.trim();
+      $('#message').textContent = '正在读取…';
+      try {
+        const response = await fetch('/api/stats', { headers: { Authorization: `Bearer ${token}` } });
+        const data = await response.json();
+        if (!response.ok || !data.ok) throw new Error(data.error || '读取失败');
+        $('#siteViews').textContent = data.totals.siteViews;
+        $('#resourceViews').textContent = data.totals.resourceViews;
+        $('#downloads').textContent = data.totals.downloads;
+        $('#resourceRows').innerHTML = data.resources.length ? data.resources.map(row => `<tr><td>${safe(row.resource_title || row.resource_key)}</td><td>${row.views}</td><td>${row.downloads}</td><td>${safe(row.last_event_at)}</td></tr>`).join('') : '<tr><td colspan="4">暂无记录</td></tr>';
+        $('#recentRows').innerHTML = data.recent.length ? data.recent.map(row => `<tr><td>${safe(row.created_at)}</td><td>${safe(labels[row.action] || row.action)}</td><td>${safe(row.resource_title || row.resource_key)}</td></tr>`).join('') : '<tr><td colspan="3">暂无记录</td></tr>';
+        $('#dashboard').hidden = false;
+        $('#message').textContent = `读取成功：${data.generatedAt}`;
+      } catch (error) {
+        $('#dashboard').hidden = true;
+        $('#message').textContent = error.message === 'unauthorized' ? '令牌不正确。' : `读取失败：${error.message}`;
+      }
+    });
+  </script>
+</body>
+</html>
