@@ -39,7 +39,10 @@ for (const file of ['app.js','reader.js']) {
   const source = fs.readFileSync(path.join(root,'js',file),'utf8');
   for (const match of source.matchAll(/(?:querySelector\(|\$\()['"]#([\w-]+)['"]/g)) assert.ok(ids.has(match[1]), `Unresolved selector in ${file}: ${match[1]}`);
 }
-for (const match of html.matchAll(/(?:src|href)="((?:assets|js|styles|resources)\/[^"#]+)"/g)) assert.ok(fs.existsSync(path.join(root,match[1])),match[1]);
+for (const match of html.matchAll(/(?:src|href)="((?:assets|js|styles|resources)\/[^"#]+)"/g)) {
+  const assetPath = match[1].split('?')[0];
+  assert.ok(fs.existsSync(path.join(root,assetPath)),match[1]);
+}
 const css=fs.readFileSync(path.join(root,'assets/library.css'),'utf8');
 for(const name of ['bg-canvas','bg-surface','bg-soft','text-ink','text-muted','text-brand','border-line','bg-brand','bg-brand-soft','bg-terracotta-soft','text-terracotta','bg-slate-blue-soft','text-slate-blue','bg-ochre-soft','text-ochre','border-brand']) assert.ok(css.includes('.'+name), 'Missing compiled utility: '+name);
 assert.ok(css.includes('bg-brand-hover'), 'Missing compiled hover utility: bg-brand-hover');
