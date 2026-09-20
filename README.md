@@ -44,7 +44,7 @@ npm run audit
 | `resources/courseware/` | 9 份章节 PPTX，下载使用原始文件 |
 | `resources/question-bank/` | 章节题库、期末练习和错题解析 PDF |
 | `resources/review/` | 复习 PDF 与网页演示（网页演示目录保持其内部 CSS/图片） |
-| `resources/textbooks/` | 可用的 EPUB 教材资源 |
+| `resources/textbooks/` | 可用的 PDF 教材资源 |
 | `resources/previews/pptx/` | 9 份 PPTX 对应的原版 PDF 在线预览 |
 | `resources/readers/` | 非浏览器原生格式的离线阅读副本 |
 | `functions/api/verify.js` | Cloudflare Pages 服务端名单验证接口；名单本体不进入公开仓库 |
@@ -81,7 +81,7 @@ UI patterns：Primary = `UI.button + UI.primary`；Secondary = `UI.button + UI.s
 
 - PPTX 在线阅读使用 `resources/previews/pptx/` 中由 PowerPoint 原生导出的 PDF，保留原版图表、文字、公式；下载仍然指向 `resources/courseware/` 中的原始 PPTX。PDF 阅读支持页码、前后翻页、左右键、缩放，文件内容不上传到第三方。
 - HTTP 下 PDF 使用本地 PDF.js 读取原始 PDF，避免内置浏览器 PDF 插件空白；文件内容不上传到第三方。`file://` 直接打开时保留原生 iframe PDF 回退，其效果取决于浏览器。
-- HTML 使用原文件 iframe；Markdown、XLSX、EPUB、XMIND 保留现有 HTML 阅读副本。下载始终指向原始文件。
+- HTML 使用原文件 iframe；Markdown、XLSX、XMIND 保留现有 HTML 阅读副本。PDF 使用本地 PDF.js 在线阅读，下载始终指向原始文件。
 - 原生 dialog 提供 Escape、Tab 焦点约束、关闭后焦点返回；PPTX 的 PDF 预览与原始 PPTX 下载保持分离。
 - 下载验证现在要求输入 8 位学号和名单中的姓名，名单来自 `教师页面.pdf`（BST200-04）与 `教师页面2.pdf`（BST200-08），共 122 名去重学生；公开部署时名单通过 Cloudflare Pages Secret `ROSTER_JSON` 提供给 `functions/api/verify.js`，不进入公开 GitHub 仓库。
 - 本地名单文件 `resources/roster.js` 已加入 `.gitignore`，仅用于本地核对；公开 Pages 部署使用服务端接口验证。静态资源 URL 本身仍属于公开站点资源，若需要强制阻止绕过下载，还应把文件移至 R2 并由服务端签发短时下载链接。
@@ -89,7 +89,7 @@ UI patterns：Primary = `UI.button + UI.primary`；Secondary = `UI.button + UI.s
 ## 已知原有资料问题
 
 “《统计学》第 3 版配套教材”登记的 `resources/textbooks/14549528 ... .pdf` 当前不存在。该条保留在列表，点击阅读/下载会提示联系助教更新文件，并排除在最近更新之外。确认教材文件后可放入该目录并移除 `available: false`。
-学习指导 EPUB 已保留在公开 GitHub 仓库，但因 Cloudflare Pages 单文件大小限制，Pages 部署目录不上传该文件；目录中的阅读副本仍可在线打开，下载路径指向 GitHub 原文件。
+学习指导已替换为本地压缩 PDF（约 14.5 MiB、360 页），低于 Cloudflare Pages 单文件大小限制，可随 Pages 部署直接在线阅读和下载；原 EPUB 已从当前资料库移除。
 另外，`时间序列分析与指数分析 · 在线演示` 的源目录当前不存在，已标记为不可用并排除在最近更新之外。
 另外，统计学前三部分讲授提纲、重难点源稿和知识导图的原始文件当前也不存在，均已标记为不可用并排除在最近更新之外。
 
@@ -97,8 +97,8 @@ UI patterns：Primary = `UI.button + UI.primary`；Secondary = `UI.button + UI.s
 
 ## 验证
 
-`npm test`：6 项通过。`npm run audit`：35 条记录、30 个有效原文件、5 个明确标注的缺失文件、9 个 PPTX PDF 预览、静态 DOM selector、动态 Tailwind 类和“无项目外资源路径”检查均通过。
+`npm test`：7 项通过。`npm run audit`：35 条记录、30 个有效原文件、5 个明确标注的缺失文件、9 个 PPTX PDF 预览、静态 DOM selector、动态 Tailwind 类和“无项目外资源路径”检查均通过。
 
-浏览器检查覆盖搜索、快捷关键词、分类、局部查询、章节交集、空态、排序，PPTX 对应 PDF 的原版显示/翻页/缩放/键盘，PDF 原版显示/翻页/缩放，HTML 与 Markdown 阅读，XLSX/EPUB 的 iframe 路径，下载错误提示、成功下载事件及 Toast。Ctrl+K、/、Escape 实测正常；Cmd+K 保留同一事件逻辑，未在 macOS 实测。
+浏览器检查覆盖搜索、快捷关键词、分类、局部查询、章节交集、空态、排序，PPTX 对应 PDF 的原版显示/翻页/缩放/键盘，PDF 原版显示/翻页/缩放，HTML 与 Markdown 阅读，XLSX 的 iframe 路径，下载错误提示、成功下载事件及 Toast。Ctrl+K、/、Escape 实测正常；Cmd+K 保留同一事件逻辑，未在 macOS 实测。
 
 响应式实测：375px 单列、768px 两列、1280px 三列，页面没有横向溢出；375px 下载弹窗内容宽度 342px，无内部横向溢出。正式 `index.html` 入口加载正常，两本封面加载成功，控制台无错误。当前内置浏览器未进入系统原生全屏，已验证 375px 视口下 dialog 铺满视口的回退状态；系统全屏仍需在支持的浏览器验证。没有逐份通读所有 35 个 catalog 记录，也没有验证尚不存在的真实名单后端。

@@ -443,12 +443,13 @@ const resources = [
   {
     "title": "《统计学》第 3 版学习指导及能力提升训练",
     "category": "教材",
-    "format": "EPUB",
-    "path": "https://raw.githubusercontent.com/sherry56/statistics-library/main/resources/textbooks/《统计学-第3版》学习指导及能力提升训练 (向蓉美 主编；王青华 主编；马丹 主编) (z-library.sk, 1lib.sk, z-lib.sk).epub",
-    "desc": "课程配套学习指导与能力提升训练电子书。",
+    "format": "PDF",
+    "path": "resources/textbooks/《统计学》第3版学习指导及能力提升训练.pdf",
+    "desc": "课程配套学习指导与能力提升训练 PDF。",
     "tags": [
       "教材",
-      "电子书"
+      "PDF",
+      "指导书"
     ],
     "updatedAt": "2026-06-17T07:21:58.708Z",
     "updatedSource": "file-mtime"
