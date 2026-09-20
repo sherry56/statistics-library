@@ -6,12 +6,17 @@ const categories = {
   '复习大纲': '考点、讲义与专题总结',
   '教材': '课程教材与配套学习指导'
 };
-// Current release scope: only courseware and textbooks are open. Keep this
-// allow-list in one place so cards, search, recent updates, and actions agree.
-const openCategories = new Set(['课件', '教材']);
+// Keep the release scope in one place so cards, search, recent updates, and
+// actions agree. Review materials are open only for the two PDF paths below.
+const openCategories = new Set(['课件', '教材', '复习大纲']);
+const openResourcePaths = new Set([
+  'resources/review/统计学基础知识点-html演示/统计学重点知识点1-3章.pdf',
+  'resources/review/统计学重难点与易混淆点-html演示/统计学重难点与易混淆点梳理.pdf'
+]);
 const isCategoryOpen = category => openCategories.has(category);
-const openResources = () => resources.filter(item => isCategoryOpen(item.category));
-const isResourceOpen = item => !!item && isCategoryOpen(item.category);
+const isResourceOpen = item => !!item && isCategoryOpen(item.category)
+  && (item.category !== '复习大纲' || openResourcePaths.has(item.path));
+const openResources = () => resources.filter(isResourceOpen);
 let activeCategory = '';
 let activeChapter = '';
 let activeResource = null;
@@ -40,7 +45,10 @@ function trackStat(action, item = null) {
 }
 function fileAvailable(item) {
   if (!isResourceOpen(item)) {
-    showToast(`${LibraryCore.label(item?.category || '') || '该分类'}暂未开放，后续会逐步开放。`);
+    const message = item?.category === '复习大纲' && isCategoryOpen('复习大纲')
+      ? '复习资料目前只开放这两份 PDF，其他资料后续开放。'
+      : `${LibraryCore.label(item?.category || '') || '该分类'}暂未开放，后续会逐步开放。`;
+    showToast(message);
     return false;
   }
   if (item.available !== false) return true;
@@ -51,7 +59,7 @@ function syncScrollLock() { document.body.classList.toggle('overflow-hidden', mo
 function renderHome() {
   $('#collections').innerHTML = Object.entries(categories).map(([category, description]) => {
     const isOpen = isCategoryOpen(category);
-    const count = resources.filter(item => item.category === category).length;
+    const count = openResources().filter(item => item.category === category).length;
     const content = `<div class="flex items-center justify-between"><span class="flex items-center gap-3"><span>${icon('folder', UI.categoryIcon[category] || 'text-muted')}</span><h3 class="text-base font-medium">${LibraryCore.label(category)}</h3></span>${isOpen ? `<span class="text-xs text-muted">${count} 份</span>` : '<span class="rounded-full bg-soft px-2 py-1 text-[10px] text-muted">暂未开放</span>'}</div>
       <div class="mt-4 flex items-end justify-between gap-3"><p class="text-xs leading-6 text-muted">${description}</p>${isOpen ? '<span class="text-muted transition-transform group-hover:translate-x-1 group-hover:text-brand" aria-hidden="true">→</span>' : '<span class="text-xs text-muted" aria-hidden="true">稍后开放</span>'}</div>`;
     return isOpen
