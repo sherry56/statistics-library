@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="statistics-blue" data-theme-base="assets/themes/">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>统计学基础知识点</title>
+  <link rel="stylesheet" href="assets/animations.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="logo-slot">
+  <img src="assets/swufefull.png" alt="西南财经大学">
+</div>
+
+<div class="deck">
+  <section class="slide" data-title="封面">
+    <p class="kicker">统计学基础</p>
+    <h1 class="title anim-fade-up">统计学基础知识点</h1>
+    <p class="subtitle">总论、统计数据的收集整理与描述、数据特征的描述</p>
+    <div class="grid g3" style="margin-top:46px;max-width:900px">
+      <div class="card blue-card"><h3>总论</h3><p>认识统计学的对象、语言和数据类型。</p></div>
+      <div class="card blue-card"><h3>数据描述</h3><p>理解数据怎样收集、整理、制表和制图。</p></div>
+      <div class="card blue-card"><h3>数据特征</h3><p>从集中、离散和形状三个角度概括数据。</p></div>
+    </div>
+    <aside class="notes">开场说明：今天的主线是从认识数据，到整理展示数据，再到概括数据特征。</aside>
+    <div class="deck-footer"><span>统计学基础知识点</span><span class="slide-number" data-current="1" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="整体结构">
+    <p class="kicker">课程结构</p>
+    <h2 class="h2">一条完整的数据分析链</h2>
+    <div class="flow">
+      <div class="node">明确研究对象</div><div class="arrow">→</div>
+      <div class="node">识别变量与数据类型</div><div class="arrow">→</div>
+      <div class="node">收集数据</div><div class="arrow">→</div>
+      <div class="node">整理与展示</div><div class="arrow">→</div>
+      <div class="node">概括数据特征</div>
+    </div>
+    <div class="grid g3" style="margin-top:48px">
+      <div class="card"><h3>第一章 总论</h3><p>建立统计学的基本概念框架。</p></div>
+      <div class="card"><h3>第二章 收集、整理与描述</h3><p>把零散数据变成可阅读的信息。</p></div>
+      <div class="card"><h3>第三章 数据特征描述</h3><p>用指标概括数据的中心、差异与形状。</p></div>
+    </div>
+    <aside class="notes">这一页帮助学生先建立整体路线，后面每个知识点都放回这条链条里理解。</aside>
+    <div class="deck-footer"><span>课程结构</span><span class="slide-number" data-current="2" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="第一章思维导图">
+    <span class="section-label">第一章</span>
+    <h2 class="h2">总论：先学会统计学的基本语言</h2>
+    <div class="mind">
+      <div class="mind-root">总论</div>
+      <div class="mind-branches">
+        <div class="branch"><h3>统计的含义</h3><p>统计工作、统计资料、统计学</p></div>
+        <div class="branch"><h3>统计学类型</h3><p>描述统计、推断统计</p></div>
+        <div class="branch"><h3>基本概念</h3><p>总体、个体、样本、参数、统计量</p></div>
+        <div class="branch"><h3>标志、指标与变量</h3><p>个体特征、总体特征、可变特征</p></div>
+        <div class="branch"><h3>统计数据类型</h3><p>定性、定量、计量尺度、时间状态</p></div>
+      </div>
+    </div>
+    <aside class="notes">本章重点不是公式，而是把统计学的基本词语讲清楚。</aside>
+    <div class="deck-footer"><span>第一章 总论</span><span class="slide-number" data-current="3" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="统计学基本认识">
+    <p class="kicker">统计学的基本认识</p>
+    <h2 class="h2">统计学是用数据认识现象的方法</h2>
+    <table class="table">
+      <thead><tr><th>概念</th><th>核心含义</th><th>例子</th></tr></thead>
+      <tbody>
+        <tr><td>统计工作</td><td>收集、整理、分析数据的活动</td><td>调查学生消费、整理企业销售额</td></tr>
+        <tr><td>统计资料</td><td>统计工作得到的数据材料</td><td>调查表、统计报表、数据表</td></tr>
+        <tr><td>统计学</td><td>研究数据方法的学科</td><td>如何抽样、如何制表、如何分析</td></tr>
+      </tbody>
+    </table>
+    <div class="quote" style="margin-top:30px">统计学研究的不是孤立数字，而是大量现象背后的数量规律。</div>
+    <aside class="notes">强调统计学不是单纯计算，而是从现实问题出发，用数据支撑判断。</aside>
+    <div class="deck-footer"><span>总论</span><span class="slide-number" data-current="4" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="描述统计与推断统计">
+    <p class="kicker">统计学类型</p>
+    <h2 class="h2">描述统计看样子，推断统计看总体</h2>
+    <div class="grid g2">
+      <div class="card blue-card">
+        <h3>描述统计</h3>
+        <p>回答“数据本身是什么样”。常见工作包括整理数据、画图、计算平均数和标准差。</p>
+      </div>
+      <div class="card blue-card">
+        <h3>推断统计</h3>
+        <p>回答“总体可能是什么样”。常见工作是用样本信息估计总体参数或进行假设检验。</p>
+      </div>
+    </div>
+    <div class="flow" style="margin-top:42px">
+      <div class="node">50 名学生学习时长</div><div class="arrow">→</div>
+      <div class="node">画图、求平均</div><div class="arrow">→</div>
+      <div class="node">推断全校学生情况</div>
+    </div>
+    <aside class="notes">用学生学习时长的例子说明：前半段是描述，后半段是推断。</aside>
+    <div class="deck-footer"><span>描述统计与推断统计</span><span class="slide-number" data-current="5" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="总体、样本与统计量">
+    <p class="kicker">基本概念</p>
+    <h2 class="h2">从总体到样本，再从样本回到总体</h2>
+    <table class="table">
+      <thead><tr><th>概念</th><th>含义</th><th>例子：研究某班学生学习情况</th></tr></thead>
+      <tbody>
+        <tr><td>总体</td><td>研究对象的全体</td><td>全班所有学生</td></tr>
+        <tr><td>个体/总体单位</td><td>构成总体的每一个单位</td><td>每一名学生</td></tr>
+        <tr><td>样本</td><td>从总体中抽取的一部分个体</td><td>抽取的 10 名学生</td></tr>
+        <tr><td>参数</td><td>反映总体特征的指标，通常未知</td><td>全班平均成绩</td></tr>
+        <tr><td>统计量</td><td>根据样本计算出的指标</td><td>样本平均成绩</td></tr>
+      </tbody>
+    </table>
+    <div class="flow" style="margin-top:30px">
+      <div class="node">总体</div><div class="arrow">→</div>
+      <div class="node">抽样</div><div class="arrow">→</div>
+      <div class="node">样本</div><div class="arrow">→</div>
+      <div class="node">统计量</div><div class="arrow">→</div>
+      <div class="node">总体参数</div>
+    </div>
+    <aside class="notes">重点讲清楚：参数属于总体，统计量属于样本。</aside>
+    <div class="deck-footer"><span>总体、样本与统计量</span><span class="slide-number" data-current="6" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="标志、指标与变量">
+    <p class="kicker">标志、指标与变量</p>
+    <h2 class="h2">个体特征、总体特征和可变特征</h2>
+    <div class="grid g2">
+      <table class="table compact">
+        <thead><tr><th>概念</th><th>说明</th><th>例子</th></tr></thead>
+        <tbody>
+          <tr><td>标志</td><td>说明总体单位特征的名称</td><td>性别、成绩、专业</td></tr>
+          <tr><td>标志值</td><td>标志的具体表现</td><td>男、85 分</td></tr>
+          <tr><td>指标</td><td>反映总体数量特征</td><td>平均成绩、及格率</td></tr>
+          <tr><td>变量</td><td>取值会变化的特征</td><td>年龄、收入、满意度</td></tr>
+        </tbody>
+      </table>
+      <table class="table compact">
+        <thead><tr><th>比较</th><th>标志</th><th>指标</th></tr></thead>
+        <tbody>
+          <tr><td>描述对象</td><td>个体特征</td><td>总体特征</td></tr>
+          <tr><td>常见阶段</td><td>调查阶段</td><td>整理和分析阶段</td></tr>
+          <tr><td>例子</td><td>每个学生的成绩</td><td>全班平均成绩</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <aside class="notes">这里最容易混淆，建议用“一个学生的成绩”和“全班平均成绩”对比说明。</aside>
+    <div class="deck-footer"><span>标志、指标与变量</span><span class="slide-number" data-current="7" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="统计数据类型">
+    <p class="kicker">统计数据的类型</p>
+    <h2 class="h2">先判断数据类型，再选择整理和展示方法</h2>
+    <div class="grid g2">
+      <div class="card">
+        <h3>按能否直接用数字表示</h3>
+        <table class="table compact">
+          <tbody>
+            <tr><td>定性数据</td><td>类别或属性</td><td>性别、专业</td></tr>
+            <tr><td>定量数据</td><td>数量大小</td><td>成绩、收入</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h3>按变量类型</h3>
+        <table class="table compact">
+          <tbody>
+            <tr><td>分类变量</td><td>类别，无大小顺序</td><td>性别</td></tr>
+            <tr><td>顺序变量</td><td>有等级顺序</td><td>满意度</td></tr>
+            <tr><td>数值型变量</td><td>取值是数字</td><td>成绩、年龄</td></tr>
+            <tr><td>离散/连续变量</td><td>可数或连续取值</td><td>人数、身高</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <aside class="notes">这页可以用小问答让学生判断：专业、满意度、年龄、收入分别属于什么变量。</aside>
+    <div class="deck-footer"><span>统计数据类型</span><span class="slide-number" data-current="8" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="计量尺度与数据状态">
+    <p class="kicker">计量尺度与数据状态</p>
+    <h2 class="h2">不同尺度能做的比较不同</h2>
+    <table class="table center">
+      <thead><tr><th>尺度</th><th>能否分类</th><th>能否排序</th><th>差距有意义</th><th>倍数有意义</th><th>例子</th></tr></thead>
+      <tbody>
+        <tr><td>定类尺度</td><td>是</td><td>否</td><td>否</td><td>否</td><td>性别、专业</td></tr>
+        <tr><td>定序尺度</td><td>是</td><td>是</td><td>否</td><td>否</td><td>满意度等级</td></tr>
+        <tr><td>定距尺度</td><td>是</td><td>是</td><td>是</td><td>否</td><td>摄氏温度</td></tr>
+        <tr><td>定比尺度</td><td>是</td><td>是</td><td>是</td><td>是</td><td>收入、年龄</td></tr>
+      </tbody>
+    </table>
+    <div class="grid g2" style="margin-top:26px">
+      <div class="card"><h3>截面数据</h3><p>同一时点上多个对象的数据，如某年各省 GDP。</p></div>
+      <div class="card"><h3>时间序列数据</h3><p>同一对象在不同时点的数据，如某企业各月销售额。</p></div>
+    </div>
+    <aside class="notes">强调定比尺度有绝对零点，因此倍数比较有意义。</aside>
+    <div class="deck-footer"><span>计量尺度</span><span class="slide-number" data-current="9" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="第二章思维导图">
+    <span class="section-label">第二章</span>
+    <h2 class="h2">统计数据的收集、整理与描述</h2>
+    <div class="mind">
+      <div class="mind-root">收集<br>整理<br>描述</div>
+      <div class="mind-branches">
+        <div class="branch"><h3>数据来源</h3><p>间接来源、直接来源</p></div>
+        <div class="branch"><h3>调查方案</h3><p>目的、对象、单位、项目、方法</p></div>
+        <div class="branch"><h3>收集方法</h3><p>访问法、报告法、直接观察法</p></div>
+        <div class="branch"><h3>抽样方法</h3><p>概率抽样、非概率抽样</p></div>
+        <div class="branch"><h3>统计整理</h3><p>统计分组、分布数列、频数、频率</p></div>
+        <div class="branch"><h3>数据描述</h3><p>统计表、统计图</p></div>
+      </div>
+    </div>
+    <aside class="notes">本章主线是从获得数据到把数据变成可阅读的信息。</aside>
+    <div class="deck-footer"><span>第二章 统计数据的收集、整理与描述</span><span class="slide-number" data-current="10" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="数据来源与调查方案">
+    <p class="kicker">数据来源与调查方案</p>
+    <h2 class="h2">数据从哪里来，先由研究目的决定</h2>
+    <div class="grid g2">
+      <table class="table">
+        <thead><tr><th>来源</th><th>优点</th><th>局限</th></tr></thead>
+        <tbody>
+          <tr><td>间接来源</td><td>成本低、获取快</td><td>不一定完全适合研究问题</td></tr>
+          <tr><td>直接来源</td><td>针对性强</td><td>成本高、周期长</td></tr>
+        </tbody>
+      </table>
+      <table class="table">
+        <thead><tr><th>调查方案项目</th><th>要回答的问题</th></tr></thead>
+        <tbody>
+          <tr><td>调查目的</td><td>为什么调查</td></tr>
+          <tr><td>调查对象</td><td>调查范围是什么</td></tr>
+          <tr><td>调查单位</td><td>具体向谁调查</td></tr>
+          <tr><td>调查项目</td><td>要收集哪些变量</td></tr>
+          <tr><td>调查方法</td><td>如何获得数据</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <aside class="notes">用月消费调查举例，说明调查方案不是形式，而是保证数据能回答问题。</aside>
+    <div class="deck-footer"><span>数据来源与调查方案</span><span class="slide-number" data-current="11" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="调查单位与要求">
+    <p class="kicker">调查单位与要求</p>
+    <h2 class="h2">调查对象、调查单位、报告单位要分清</h2>
+    <table class="table">
+      <thead><tr><th>概念</th><th>含义</th><th>例子：调查高校学生月消费</th></tr></thead>
+      <tbody>
+        <tr><td>调查对象</td><td>调查范围，也就是总体</td><td>全校学生</td></tr>
+        <tr><td>调查单位</td><td>具体被调查的单位</td><td>每一名学生</td></tr>
+        <tr><td>报告单位</td><td>提交资料的单位</td><td>各学院或班级</td></tr>
+      </tbody>
+    </table>
+    <div class="grid g3" style="margin-top:28px">
+      <div class="card"><h3>准确</h3><p>真实、客观地反映实际情况。</p></div>
+      <div class="card"><h3>完整</h3><p>单位和项目不能遗漏。</p></div>
+      <div class="card"><h3>及时</h3><p>在需要使用数据前完成收集。</p></div>
+    </div>
+    <aside class="notes">准确、完整、及时是统计调查的基本质量要求。</aside>
+    <div class="deck-footer"><span>调查单位与调查要求</span><span class="slide-number" data-current="12" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="数据收集方法">
+    <p class="kicker">数据收集方法</p>
+    <h2 class="h2">不同问题选择不同收集方式</h2>
+    <table class="table">
+      <thead><tr><th>方法</th><th>具体形式</th><th>适用场景</th></tr></thead>
+      <tbody>
+        <tr><td>访问法</td><td>面访、电话调查、电脑辅助调查、座谈会、深访</td><td>调查态度、意愿、满意度</td></tr>
+        <tr><td>报告法</td><td>邮寄调查、单位报送、统计报表</td><td>组织或单位定期上报数据</td></tr>
+        <tr><td>直接观察法</td><td>观察法、实验法</td><td>记录行为、过程或实验结果</td></tr>
+      </tbody>
+    </table>
+    <div class="grid g3" style="margin-top:30px">
+      <div class="card"><h3>怎么看</h3><p>问卷、访问、访谈。</p></div>
+      <div class="card"><h3>怎么做</h3><p>观察法。</p></div>
+      <div class="card"><h3>是否有影响</h3><p>实验法。</p></div>
+    </div>
+    <aside class="notes">让学生判断：满意度调查、路口车流统计、药物效果研究分别适合什么方法。</aside>
+    <div class="deck-footer"><span>数据收集方法</span><span class="slide-number" data-current="13" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="抽样方法">
+    <p class="kicker">抽样方法</p>
+    <h2 class="h2">概率抽样重在可推断，非概率抽样重在方便获取</h2>
+    <div class="grid g2">
+      <table class="table compact">
+        <thead><tr><th>概率抽样</th><th>做法</th></tr></thead>
+        <tbody>
+          <tr><td>简单随机抽样</td><td>每个单位机会相同</td></tr>
+          <tr><td>分层抽样</td><td>先分层，再在各层抽样</td></tr>
+          <tr><td>整群抽样</td><td>先分群，再抽取若干群</td></tr>
+          <tr><td>系统抽样</td><td>按固定间隔抽取</td></tr>
+          <tr><td>多阶段抽样</td><td>分多个阶段逐步抽取</td></tr>
+        </tbody>
+      </table>
+      <table class="table compact">
+        <thead><tr><th>非概率抽样</th><th>风险</th></tr></thead>
+        <tbody>
+          <tr><td>方便抽样</td><td>代表性较弱</td></tr>
+          <tr><td>判断抽样</td><td>主观性较强</td></tr>
+          <tr><td>自愿样本</td><td>容易偏向积极参与者</td></tr>
+          <tr><td>滚雪球样本</td><td>样本圈层可能集中</td></tr>
+          <tr><td>配额抽样</td><td>不一定随机</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <aside class="notes">强调概率抽样适合推断总体，非概率抽样要注意代表性问题。</aside>
+    <div class="deck-footer"><span>抽样方法</span><span class="slide-number" data-current="14" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="统计误差">
+    <p class="kicker">统计误差</p>
+    <h2 class="h2">误差不可怕，关键是知道它从哪里来</h2>
+    <table class="table">
+      <thead><tr><th>类型</th><th>含义</th><th>是否可避免</th></tr></thead>
+      <tbody>
+        <tr><td>登记性误差</td><td>填报、记录、录入过程中的错误</td><td>可以尽量避免</td></tr>
+        <tr><td>代表性误差</td><td>样本不能完全代表总体造成的误差</td><td>抽样调查中常见</td></tr>
+        <tr><td>系统性误差</td><td>调查设计或执行偏差导致的误差</td><td>应尽量避免</td></tr>
+        <tr><td>随机误差</td><td>抽样带来的随机波动</td><td>不能完全避免，但可以控制</td></tr>
+      </tbody>
+    </table>
+    <div class="quote" style="margin-top:30px">数据不准确，后续整理和分析都会失去意义。</div>
+    <aside class="notes">把登记性误差和抽样误差分开讲：前者多因操作造成，后者是抽样固有现象。</aside>
+    <div class="deck-footer"><span>统计误差</span><span class="slide-number" data-current="15" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="统计分组">
+    <p class="kicker">统计分组</p>
+    <h2 class="h2">分组让杂乱数据变成结构</h2>
+    <div class="grid g3">
+      <div class="card number-card"><span class="num">1</span><h3>划分类型</h3><p>把总体单位分成若干类别。</p></div>
+      <div class="card number-card"><span class="num">2</span><h3>反映结构</h3><p>观察内部比例关系。</p></div>
+      <div class="card number-card"><span class="num">3</span><h3>揭示关系</h3><p>发现现象之间的依存关系。</p></div>
+    </div>
+    <div class="grid g2" style="margin-top:28px">
+      <table class="table compact">
+        <thead><tr><th>分组原则</th><th>含义</th></tr></thead>
+        <tbody>
+          <tr><td>科学性</td><td>符合研究目的</td></tr>
+          <tr><td>完备性</td><td>每个单位都能归入某一组</td></tr>
+          <tr><td>互斥性</td><td>每个单位只能归入一个组</td></tr>
+        </tbody>
+      </table>
+      <table class="table compact">
+        <thead><tr><th>分组类型</th><th>例子</th></tr></thead>
+        <tbody>
+          <tr><td>品质标志分组</td><td>按性别、专业分组</td></tr>
+          <tr><td>数量标志分组</td><td>按成绩、收入分组</td></tr>
+          <tr><td>简单/复合分组</td><td>按一个或多个标志分组</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <aside class="notes">分组的三个原则很重要，尤其是完备性和互斥性。</aside>
+    <div class="deck-footer"><span>统计分组</span><span class="slide-number" data-current="16" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="分布数列、频数与频率">
+    <p class="kicker">分布数列、频数与频率</p>
+    <h2 class="h2">分组之后，要看每组有多少、占多少</h2>
+    <div class="grid g2">
+      <table class="table">
+        <thead><tr><th>概念</th><th>含义</th></tr></thead>
+        <tbody>
+          <tr><td>组别</td><td>分成的各个类别或区间</td></tr>
+          <tr><td>频数</td><td>各组单位数</td></tr>
+          <tr><td>频率</td><td>各组单位数占总体单位数的比重</td></tr>
+          <tr><td>组距</td><td>区间长度</td></tr>
+          <tr><td>组中值</td><td>上限和下限的中点</td></tr>
+        </tbody>
+      </table>
+      <div>
+        <div class="formula">
+          频率 = 频数 / 总数<br>
+          组距 = 上限 - 下限<br>
+          组中值 = (上限 + 下限) / 2<br>
+          频数密度 = 频数 / 组距
+        </div>
+        <div class="card" style="margin-top:24px"><h3>注意</h3><p>等距分组可直接比较频数；不等距分组应比较频数密度。</p></div>
+      </div>
+    </div>
+    <aside class="notes">如果组距不同，频数大小会受组距影响，所以要用频数密度。</aside>
+    <div class="deck-footer"><span>分布数列</span><span class="slide-number" data-current="17" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="统计表">
+    <p class="kicker">统计表</p>
+    <h2 class="h2">统计表是整理后数据的规范表达</h2>
+    <div class="grid g2">
+      <table class="table compact">
+        <thead><tr><th>构成</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>总标题</td><td>说明表格整体内容</td></tr>
+          <tr><td>横栏标题</td><td>说明横向项目</td></tr>
+          <tr><td>纵列标题</td><td>说明纵向项目</td></tr>
+          <tr><td>横行与纵列</td><td>承载数据结构</td></tr>
+          <tr><td>注释与资料来源</td><td>补充说明数据口径</td></tr>
+        </tbody>
+      </table>
+      <table class="table compact">
+        <thead><tr><th>性别</th><th>低消费</th><th>中消费</th><th>高消费</th><th>合计</th></tr></thead>
+        <tbody>
+          <tr><td>男</td><td>18</td><td>52</td><td>30</td><td>100</td></tr>
+          <tr><td>女</td><td>20</td><td>57</td><td>23</td><td>100</td></tr>
+          <tr><td>合计</td><td>38</td><td>109</td><td>53</td><td>200</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="quote" style="margin-top:28px">列联表也叫交叉表，适合观察两个或多个变量之间的分布差异。</div>
+    <aside class="notes">强调表格标题、单位、对齐和注释。列联表用于交叉分类。</aside>
+    <div class="deck-footer"><span>统计表</span><span class="slide-number" data-current="18" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="统计图选择">
+    <p class="kicker">统计图选择</p>
+    <h2 class="h2">不同数据类型，选择不同图形</h2>
+    <div class="grid g2">
+      <table class="table compact">
+        <thead><tr><th>数据类型</th><th>推荐图形</th></tr></thead>
+        <tbody>
+          <tr><td>分类数据</td><td>条形图、帕累托图、饼图、环形图</td></tr>
+          <tr><td>顺序数据</td><td>累计频数图、累计频率图</td></tr>
+          <tr><td>分组数值数据</td><td>直方图</td></tr>
+          <tr><td>未分组数值数据</td><td>茎叶图、箱线图</td></tr>
+          <tr><td>时间序列数据</td><td>线图</td></tr>
+          <tr><td>两个变量</td><td>散点图</td></tr>
+        </tbody>
+      </table>
+      <div>
+        <div class="mini-chart">
+          <div class="bar" style="height:45%"><span>A类</span></div>
+          <div class="bar" style="height:75%"><span>B类</span></div>
+          <div class="bar" style="height:58%"><span>C类</span></div>
+          <div class="bar" style="height:88%"><span>D类</span></div>
+        </div>
+        <div class="formula" style="margin-top:42px;font-size:22px">
+          分类看条形，结构看饼环；<br>
+          分布看直方，小样本看茎叶；<br>
+          趋势看线图，关系看散点。
+        </div>
+      </div>
+    </div>
+    <aside class="notes">这页可以用实际问题快速判断图形，例如性别构成、成绩分布、销售趋势。</aside>
+    <div class="deck-footer"><span>统计图选择</span><span class="slide-number" data-current="19" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="第三章思维导图">
+    <span class="section-label">第三章</span>
+    <h2 class="h2">数据特征的描述</h2>
+    <div class="mind">
+      <div class="mind-root">数据特征</div>
+      <div class="mind-branches">
+        <div class="branch"><h3>集中趋势</h3><p>众数、中位数、平均数、分位数</p></div>
+        <div class="branch"><h3>离散趋势</h3><p>极差、四分位差、方差、标准差、离散系数</p></div>
+        <div class="branch"><h3>分布形状</h3><p>对称分布、右偏分布、左偏分布、峰态</p></div>
+        <div class="branch"><h3>箱线图</h3><p>Q1、中位数、Q3、异常值</p></div>
+      </div>
+    </div>
+    <aside class="notes">第三章的关键词是概括：图能看见数据，指标能概括数据。</aside>
+    <div class="deck-footer"><span>第三章 数据特征的描述</span><span class="slide-number" data-current="20" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="数据特征观察角度">
+    <p class="kicker">数据特征的观察角度</p>
+    <h2 class="h2">看一组数据，通常看三个问题</h2>
+    <div class="grid g3">
+      <div class="card blue-card"><h3>中心在哪里</h3><p>集中趋势：众数、中位数、平均数、分位数。</p></div>
+      <div class="card blue-card"><h3>差异有多大</h3><p>离散趋势：极差、四分位差、方差、标准差、离散系数。</p></div>
+      <div class="card blue-card"><h3>形状是什么样</h3><p>分布形状：偏态、峰态、箱线图。</p></div>
+    </div>
+    <div class="quote" style="margin-top:36px">平均数只能说明中心，不能说明所有数据是否接近这个中心。</div>
+    <aside class="notes">用“两组平均分都为 80”的例子，说明还要看离散程度和分布形状。</aside>
+    <div class="deck-footer"><span>数据特征概括</span><span class="slide-number" data-current="21" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="集中趋势">
+    <p class="kicker">集中趋势</p>
+    <h2 class="h2">集中趋势回答“数据中心在哪里”</h2>
+    <table class="table">
+      <thead><tr><th>指标</th><th>含义</th><th>适用提示</th></tr></thead>
+      <tbody>
+        <tr><td>众数</td><td>出现次数最多的变量值</td><td>分类数据常用</td></tr>
+        <tr><td>中位数</td><td>排序后位于中间位置的数</td><td>不易受极端值影响</td></tr>
+        <tr><td>平均数</td><td>全部数值总和除以个数</td><td>数值型数据常用</td></tr>
+        <tr><td>分位数</td><td>按位置把数据分成若干部分</td><td>常用于描述位置</td></tr>
+      </tbody>
+    </table>
+    <div class="grid g3" style="margin-top:28px">
+      <div class="card"><h3>分类数据</h3><p>常看众数。</p></div>
+      <div class="card"><h3>有极端值</h3><p>中位数更稳健。</p></div>
+      <div class="card"><h3>数值型数据</h3><p>平均数最常用。</p></div>
+    </div>
+    <aside class="notes">强调平均数受极端值影响，中位数更稳定。</aside>
+    <div class="deck-footer"><span>集中趋势</span><span class="slide-number" data-current="22" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="离散趋势">
+    <p class="kicker">离散趋势</p>
+    <h2 class="h2">离散趋势回答“数据之间差异有多大”</h2>
+    <div class="grid g2">
+      <table class="table compact">
+        <thead><tr><th>指标</th><th>含义</th><th>特点</th></tr></thead>
+        <tbody>
+          <tr><td>极差</td><td>最大值 - 最小值</td><td>简单，受极端值影响大</td></tr>
+          <tr><td>四分位差</td><td>上四分位数 - 下四分位数</td><td>较少受极端值影响</td></tr>
+          <tr><td>方差</td><td>离差平方的平均</td><td>常用于理论分析</td></tr>
+          <tr><td>标准差</td><td>方差的平方根</td><td>单位与原数据一致</td></tr>
+          <tr><td>离散系数</td><td>标准差 / 平均数</td><td>适合跨单位或跨水平比较</td></tr>
+        </tbody>
+      </table>
+      <div>
+        <table class="table compact center">
+          <thead><tr><th>对象</th><th>平均体重</th><th>标准差</th><th>离散系数</th></tr></thead>
+          <tbody>
+            <tr><td>牛</td><td>80 kg</td><td>18 kg</td><td>22.5%</td></tr>
+            <tr><td>羊</td><td>15 kg</td><td>3 kg</td><td>20%</td></tr>
+          </tbody>
+        </table>
+        <div class="quote" style="margin-top:24px">平均水平不同的对象，应看离散系数。</div>
+      </div>
+    </div>
+    <aside class="notes">牛羊例子说明：标准差不能直接比较相对离散程度。</aside>
+    <div class="deck-footer"><span>离散趋势</span><span class="slide-number" data-current="23" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="分布形状与箱线图">
+    <p class="kicker">分布形状与箱线图</p>
+    <h2 class="h2">形状告诉我们数据是否对称、是否有异常值</h2>
+    <div class="shape-row">
+      <div class="curve">
+        <svg viewBox="0 0 220 100"><path d="M10 88 C45 88,55 18,110 18 C165 18,175 88,210 88"></path></svg>
+        <p>对称分布</p>
+      </div>
+      <div class="curve">
+        <svg viewBox="0 0 220 100"><path d="M10 86 C35 86,45 20,80 18 C125 16,150 72,210 86"></path></svg>
+        <p>右偏分布</p>
+      </div>
+      <div class="curve">
+        <svg viewBox="0 0 220 100"><path d="M10 86 C70 74,95 16,140 18 C175 20,185 86,210 86"></path></svg>
+        <p>左偏分布</p>
+      </div>
+    </div>
+    <div class="boxplot" style="margin-top:30px">
+      <div class="boxplot-line">
+        <span class="tick" style="left:0"></span>
+        <span class="tick" style="left:100%"></span>
+        <span class="box"></span>
+        <span class="median"></span>
+      </div>
+      <div class="labels"><span>最小值</span><span>Q1</span><span>中位数</span><span>Q3</span><span>最大值</span></div>
+    </div>
+    <aside class="notes">箱线图要看箱体长度、中位数位置和异常值。</aside>
+    <div class="deck-footer"><span>分布形状与箱线图</span><span class="slide-number" data-current="24" data-total="25"></span></div>
+  </section>
+
+  <section class="slide" data-title="快速判断题">
+    <p class="kicker">快速判断题</p>
+    <h2 class="h2">用几个小问题收束知识点</h2>
+    <table class="table">
+      <thead><tr><th>问题</th><th>参考答案</th></tr></thead>
+      <tbody>
+        <tr><td>“很不满意、不满意、一般、满意、很满意”属于什么变量？</td><td>顺序变量</td></tr>
+        <tr><td>展示班级性别构成，适合什么图？</td><td>条形图、饼图或环形图</td></tr>
+        <tr><td>展示学生成绩分布，适合什么图？</td><td>直方图、茎叶图或箱线图</td></tr>
+        <tr><td>展示企业各月销售额变化，适合什么图？</td><td>线图</td></tr>
+        <tr><td>两个班平均分一样，成绩分布一定一样吗？</td><td>不一定，还要看离散程度和分布形状</td></tr>
+        <tr><td>分组组距不同，能直接比较频数吗？</td><td>不能，应比较频数密度</td></tr>
+      </tbody>
+    </table>
+    <aside class="notes">结尾可以让学生先抢答，再展示参考答案。</aside>
+    <div class="deck-footer"><span>快速判断题</span><span class="slide-number" data-current="25" data-total="25"></span></div>
+  </section>
+</div>
+
+<script src="assets/runtime.js"></script>
+</body>
+</html>

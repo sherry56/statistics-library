@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>统计学重难点与易混淆点梳理</title>
+  <link rel="stylesheet" href="assets/animations.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="logo-slot">
+  <img src="assets/swufefull.png" alt="西南财经大学">
+</div>
+
+<main class="deck">
+  <section class="slide cover" data-title="封面">
+    <p class="kicker">统计学辅导</p>
+    <h1>统计学重难点与易混淆点梳理</h1>
+    <p class="subtitle">围绕“对象界定、数据属性、调查组织、抽样与普查、统计分组、直方图与累计”进行集中讲解和例题训练。</p>
+    <div class="topic-strip">
+      <span>总体 / 个体 / 样本</span>
+      <span>四个计量尺度</span>
+      <span>品质标志 / 数量标志</span>
+      <span>调查组织形式</span>
+      <span>抽样调查 / 普查</span>
+      <span>统计分组</span>
+      <span>直方图与累计</span>
+    </div>
+    <aside class="notes">本页用于开场，说明这份演示稿不是完整教材，而是针对容易失分、容易混淆的知识点做集中梳理。</aside>
+    <div class="deck-footer"><span>统计学重难点与易混淆点梳理</span><span class="slide-number" data-current="1" data-total="10"></span></div>
+  </section>
+
+  <section class="slide" data-title="总览">
+    <p class="kicker">整体结构</p>
+    <h2 class="slide-title">七个易混点放在一条数据分析链条里理解</h2>
+    <div class="roadmap">
+      <div class="road-node"><b>1</b><strong>研究对象</strong><span>总体、个体、样本</span></div>
+      <div class="road-node"><b>2</b><strong>数据属性</strong><span>四个计量尺度</span></div>
+      <div class="road-node"><b>3</b><strong>标志性质</strong><span>品质标志、数量标志</span></div>
+      <div class="road-node"><b>4</b><strong>调查方式</strong><span>组织形式对比</span></div>
+      <div class="road-node"><b>5</b><strong>调查范围</strong><span>抽样调查、普查</span></div>
+      <div class="road-node"><b>6</b><strong>数据整理</strong><span>统计分组</span></div>
+      <div class="road-node"><b>7</b><strong>图表读取</strong><span>直方图、累计</span></div>
+    </div>
+    <div class="rule-band">
+      <strong>讲解主线：</strong>
+      <span>先明确“研究谁”，再判断“数据是什么”，接着选择“怎么调查”，最后完成“如何分组、如何读图”。</span>
+    </div>
+    <div class="mini-table-grid">
+      <table>
+        <thead><tr><th>常见失分点</th><th>纠正方向</th></tr></thead>
+        <tbody>
+          <tr><td>把样本理解成一个个体</td><td>样本是一部分个体组成的集合</td></tr>
+          <tr><td>把数字编码当作数值型数据</td><td>先看数字是否能做实际运算</td></tr>
+          <tr><td>把重点调查当作抽样调查</td><td>重点调查看“重要单位”，抽样调查看“推断总体”</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <aside class="notes">用这页帮助学生建立知识地图。每一个概念不要孤立背，而是放到数据工作流程里理解。</aside>
+    <div class="deck-footer"><span>整体结构</span><span class="slide-number" data-current="2" data-total="10"></span></div>
+  </section>
+
+  <section class="slide" data-title="总体、个体、样本">
+    <p class="kicker">易混点 1</p>
+    <h2 class="slide-title">总体、个体、样本：关键看研究对象如何界定</h2>
+    <div class="two-col wide-left">
+      <div>
+        <table class="dense-table">
+          <thead><tr><th>概念</th><th>含义</th><th>关键词</th></tr></thead>
+          <tbody>
+            <tr><td>总体</td><td>在一定研究目的下，所有研究对象的全体</td><td>全部、研究范围</td></tr>
+            <tr><td>个体 / 总体单位</td><td>构成总体的每一个单位</td><td>每一个、单个对象</td></tr>
+            <tr><td>样本</td><td>从总体中抽取出来的一部分个体组成的集合</td><td>部分、抽取、集合</td></tr>
+          </tbody>
+        </table>
+        <div class="flow-line">
+          <span>总体</span><i></i><span>抽样</span><i></i><span>样本</span><i></i><span>统计量</span><i></i><span>推断总体</span>
+        </div>
+        <div class="callout">
+          同一个现实对象，在不同研究目的下可能属于不同总体。先读题目的“研究什么”，再判断总体单位。
+        </div>
+      </div>
+      <div class="exercise-panel">
+        <h3>例题训练</h3>
+        <ol>
+          <li><strong>某校本科生月生活费：</strong>抽取 300 名本科生。总体是全体本科生，个体是每一名本科生，样本是 300 名本科生。</li>
+          <li><strong>某工厂当天 5000 个灯泡寿命：</strong>抽取 100 个检测。总体是 5000 个灯泡，个体是每一个灯泡，样本是 100 个灯泡。</li>
+          <li><strong>居民家庭汽车拥有情况：</strong>抽取 2000 户家庭。个体是“家庭”，不是“人”。</li>
+        </ol>
+      </div>
+    </div>
+    <aside class="notes">这一页要反复强调“总体不是很多数据，而是研究对象的全体”。例题 3 很适合用来纠正学生把个体想成人的惯性。</aside>
+    <div class="deck-footer"><span>总体、个体、样本</span><span class="slide-number" data-current="3" data-total="10"></span></div>
+  </section>
+
+  <section class="slide" data-title="数据的四个计量尺度">
+    <p class="kicker">易混点 2</p>
+    <h2 class="slide-title">四个计量尺度：能分类、能排序、差距有意义、倍数有意义</h2>
+    <table class="dense-table scale-table">
+      <thead><tr><th>尺度</th><th>能否分类</th><th>能否排序</th><th>差距是否有意义</th><th>倍数是否有意义</th><th>常见例子</th><th>判断句</th></tr></thead>
+      <tbody>
+        <tr><td>定类尺度</td><td>能</td><td>不能</td><td>无意义</td><td>无意义</td><td>性别、专业、血型</td><td>只能分组，不能比大小</td></tr>
+        <tr><td>定序尺度</td><td>能</td><td>能</td><td>不精确</td><td>无意义</td><td>满意度、学历层次</td><td>能排顺序，但差距不严格</td></tr>
+        <tr><td>定距尺度</td><td>能</td><td>能</td><td>有意义</td><td>无意义</td><td>摄氏温度、标准分</td><td>差几度有意义，几倍无意义</td></tr>
+        <tr><td>定比尺度</td><td>能</td><td>能</td><td>有意义</td><td>有意义</td><td>收入、年龄、身高</td><td>有绝对零点，倍数可比较</td></tr>
+      </tbody>
+    </table>
+    <div class="three-col examples-row">
+      <div class="small-box"><strong>例题 1</strong><span>性别、满意度等级、摄氏温度、月收入分别属于什么尺度？</span><em>定类、定序、定距、定比。</em></div>
+      <div class="small-box"><strong>例题 2</strong><span>学号 2024001、2024002 是否是定比尺度？</span><em>不是，是身份编码，属于定类尺度。</em></div>
+      <div class="small-box"><strong>例题 3</strong><span>满意度用 1-5 表示，通常属于什么尺度？</span><em>通常是定序尺度，数字主要表示等级顺序。</em></div>
+    </div>
+    <aside class="notes">讲解时可以用“能不能做加减乘除”来辅助判断。尤其要提醒：数字编码不等于数值型数据。</aside>
+    <div class="deck-footer"><span>数据的四个计量尺度</span><span class="slide-number" data-current="4" data-total="10"></span></div>
+  </section>
+
+  <section class="slide" data-title="品质标志和数量标志">
+    <p class="kicker">易混点 3</p>
+    <h2 class="slide-title">品质标志和数量标志：看它反映“类别属性”还是“数量大小”</h2>
+    <div class="two-col">
+      <div>
+        <table class="dense-table">
+          <thead><tr><th>类型</th><th>含义</th><th>表现形式</th><th>例子</th></tr></thead>
+          <tbody>
+            <tr><td>品质标志</td><td>说明总体单位属性或类别</td><td>通常用文字或代码表示</td><td>性别、民族、专业、产品等级</td></tr>
+            <tr><td>数量标志</td><td>说明总体单位数量特征</td><td>通常用数值表示</td><td>年龄、收入、成绩、产量</td></tr>
+          </tbody>
+        </table>
+        <table class="dense-table compact-table">
+          <thead><tr><th>易错提醒</th><th>正确理解</th></tr></thead>
+          <tbody>
+            <tr><td>品质标志也可能有顺序</td><td>如产品等级、满意度等级，仍反映属性或等级</td></tr>
+            <tr><td>数字编码不改变性质</td><td>专业编号 01、02、03 仍是品质标志</td></tr>
+            <tr><td>数量标志还能细分</td><td>人数、件数是离散型；身高、收入可近似连续</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="exercise-panel">
+        <h3>例题训练</h3>
+        <ol>
+          <li>性别、年龄、专业、考试成绩、产品等级：品质标志有性别、专业、产品等级；数量标志有年龄、考试成绩。</li>
+          <li>岗位编号 01、02、03 属于品质标志，因为编号只是岗位类别代码。</li>
+          <li>家庭人口数和家庭年收入都属于数量标志；前者是离散型，后者可近似连续。</li>
+        </ol>
+      </div>
+    </div>
+    <aside class="notes">这一页和上一页可以连起来讲：计量尺度偏向数据层级，品质标志和数量标志偏向总体单位的特征性质。</aside>
+    <div class="deck-footer"><span>品质标志和数量标志</span><span class="slide-number" data-current="5" data-total="10"></span></div>
+  </section>
+
+  <section class="slide" data-title="统计调查组织形式">
+    <p class="kicker">易混点 4</p>
+    <h2 class="slide-title">统计调查组织形式：区别“查多少、怎么选、是否制度化”</h2>
+    <div class="two-col wide-left">
+      <table class="dense-table org-table">
+        <thead><tr><th>组织形式</th><th>调查范围</th><th>主要特点</th><th>适用场景</th></tr></thead>
+        <tbody>
+          <tr><td>普查</td><td>全部单位</td><td>一次性、全面调查</td><td>人口普查、经济普查</td></tr>
+          <tr><td>抽样调查</td><td>部分单位</td><td>用样本推断总体</td><td>居民收入调查、市场调查</td></tr>
+          <tr><td>统计报表</td><td>按制度上报</td><td>自下而上、定期报送</td><td>企业月报、部门统计报表</td></tr>
+          <tr><td>重点调查</td><td>部分重点单位</td><td>抓住对总体影响大的单位</td><td>重点企业、重点地区调查</td></tr>
+          <tr><td>典型调查</td><td>典型单位</td><td>选择有代表性的单位深入调查</td><td>典型村、典型企业案例</td></tr>
+        </tbody>
+      </table>
+      <div class="exercise-panel slim">
+        <h3>例题训练</h3>
+        <ol>
+          <li>全国每十年进行一次人口普查：属于普查。</li>
+          <li>抽取 800 名大学生了解某饮料受欢迎程度：属于抽样调查。</li>
+          <li>企业每月按统一表格上报产量、销售额、库存：属于统计报表。</li>
+        </ol>
+        <div class="callout small">重点调查不等于抽样调查；重点调查选择“重要单位”，不一定随机，也不一定能推断总体。</div>
+      </div>
+    </div>
+    <aside class="notes">讲这一页时可以让学生先用一句话记忆：普查是全部查，抽样是抽部分推全部，报表是定期上报，重点是抓主要，典型是找代表深入分析。</aside>
+    <div class="deck-footer"><span>统计调查组织形式</span><span class="slide-number" data-current="6" data-total="10"></span></div>
+  </section>
+
+  <section class="slide" data-title="抽样调查和普查">
+    <p class="kicker">易混点 5</p>
+    <h2 class="slide-title">抽样调查和普查：普查求全面，抽样求经济及时</h2>
+    <div class="two-col">
+      <div>
+        <table class="dense-table">
+          <thead><tr><th>比较项目</th><th>普查</th><th>抽样调查</th></tr></thead>
+          <tbody>
+            <tr><td>调查范围</td><td>总体全部单位</td><td>总体中的一部分单位</td></tr>
+            <tr><td>目的</td><td>获得全面资料</td><td>用样本推断总体</td></tr>
+            <tr><td>成本与时间</td><td>成本高、时间长</td><td>成本较低、速度较快</td></tr>
+            <tr><td>误差特点</td><td>没有抽样误差，但可能有登记性误差</td><td>有登记性误差，也有抽样误差</td></tr>
+            <tr><td>适用对象</td><td>需要系统登记的重要资料</td><td>总体较大、要求及时经济</td></tr>
+          </tbody>
+        </table>
+        <div class="two-card-row">
+          <div class="small-box"><strong>适合普查</strong><span>需要全面掌握总体资料，且调查周期可接受。</span></div>
+          <div class="small-box"><strong>适合抽样</strong><span>总体数量大，时间经费有限，可通过科学抽样推断。</span></div>
+        </div>
+      </div>
+      <div class="exercise-panel">
+        <h3>例题训练</h3>
+        <ol>
+          <li>某市全面掌握常住人口年龄、性别、受教育程度：采用普查。</li>
+          <li>企业想快速了解消费者对新包装的喜好，时间经费有限：采用抽样调查。</li>
+          <li>“普查调查全部单位，所以一定没有误差”：错误。普查仍可能有填报、记录、录入等登记性误差。</li>
+        </ol>
+      </div>
+    </div>
+    <aside class="notes">不要把“普查更全面”讲成“普查一定更好”。在现实研究中，抽样调查因为经济、及时、可控，应用非常广。</aside>
+    <div class="deck-footer"><span>抽样调查和普查</span><span class="slide-number" data-current="7" data-total="10"></span></div>
+  </section>
+
+  <section class="slide" data-title="统计分组">
+    <p class="kicker">易混点 6</p>
+    <h2 class="slide-title">统计分组：把杂乱总体按标志划分成有意义的组</h2>
+    <div class="grid-3">
+      <div class="panel">
+        <h3>概念与作用</h3>
+        <p>根据研究目的，将总体单位按照某一标志划分为若干组。</p>
+        <ul class="tight-list">
+          <li>划分总体类型：按专业分组学生</li>
+          <li>反映结构比例：各收入组人数占比</li>
+          <li>揭示依存关系：收入水平与消费水平</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>原则与类型</h3>
+        <table class="dense-table mini">
+          <tbody>
+            <tr><td>科学性</td><td>符合研究目的</td></tr>
+            <tr><td>完备性</td><td>每个单位都能归入某组</td></tr>
+            <tr><td>互斥性</td><td>每个单位只能归入一组</td></tr>
+            <tr><td>品质标志分组</td><td>按性别、地区、专业</td></tr>
+            <tr><td>数量标志分组</td><td>按年龄、收入、成绩</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="panel">
+        <h3>关键概念</h3>
+        <div class="formula-box">
+          组距 = 上限 - 下限<br>
+          组中值 = (上限 + 下限) / 2<br>
+          频数密度 = 频数 / 组距
+        </div>
+        <p class="small-text">开口组：只有上限或只有下限的组；不等距分组应比较频数密度。</p>
+      </div>
+    </div>
+    <div class="three-col examples-row short">
+      <div class="small-box"><strong>例题 1</strong><span>按专业分为金融学、会计学、统计学。</span><em>品质标志分组。</em></div>
+      <div class="small-box"><strong>例题 2</strong><span>收入分为 3000 以下、3000-5000、8000 以上。</span><em>数量标志分组；两端为开口组。</em></div>
+      <div class="small-box"><strong>例题 3</strong><span>组距为 60-70、70-80、80-90，80 分归哪组？</span><em>通常归入 80-90，按下限在内、上限不在内。</em></div>
+    </div>
+    <aside class="notes">统计分组要讲清“完备”和“互斥”。边界值归组是考试常见点，要提醒“按题目规定优先”。</aside>
+    <div class="deck-footer"><span>统计分组</span><span class="slide-number" data-current="8" data-total="10"></span></div>
+  </section>
+
+  <section class="slide" data-title="直方图、向上累计和向下累计">
+    <p class="kicker">易混点 7</p>
+    <h2 class="slide-title">直方图、向上累计、向下累计：分清“各组分布”和“累计到哪里”</h2>
+    <div class="grid-3 histogram-slide">
+      <div class="panel">
+        <h3>直方图</h3>
+        <ul class="tight-list">
+          <li>用于分组数值型数据。</li>
+          <li>横轴是各组区间，矩形宽度表示组距。</li>
+          <li>等距分组可用频数或频率作高度。</li>
+          <li>不等距分组应使用频数密度。</li>
+        </ul>
+        <div class="histogram">
+          <span style="height: 32%"></span>
+          <span style="height: 58%"></span>
+          <span style="height: 82%"></span>
+          <span style="height: 48%"></span>
+          <span style="height: 22%"></span>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>向上累计与向下累计</h3>
+        <table class="dense-table mini center">
+          <thead><tr><th>成绩</th><th>频数</th><th>向上</th><th>向下</th></tr></thead>
+          <tbody>
+            <tr><td>60 以下</td><td>4</td><td>4</td><td>40</td></tr>
+            <tr><td>60-70</td><td>8</td><td>12</td><td>36</td></tr>
+            <tr><td>70-80</td><td>16</td><td>28</td><td>28</td></tr>
+            <tr><td>80-90</td><td>10</td><td>38</td><td>12</td></tr>
+            <tr><td>90 以上</td><td>2</td><td>40</td><td>2</td></tr>
+          </tbody>
+        </table>
+        <div class="callout small">向上累计看“不超过”；向下累计看“不低于”。</div>
+      </div>
+      <div class="exercise-panel slim">
+        <h3>例题训练</h3>
+        <ol>
+          <li>计算向上累计：从低分组开始逐组累加，得到 4、12、28、38、40。</li>
+          <li>计算向下累计：从高分组开始逐组累加，得到 40、36、28、12、2。</li>
+          <li>组距为 1000、2000、3000 时，不能直接用频数作直方图高度，应使用频数密度。</li>
+        </ol>
+      </div>
+    </div>
+    <aside class="notes">这里要把“向上累计”和“向下累计”的语义讲清。向上不是图形向上，而是从小到大累计；向下是从大到小累计。</aside>
+    <div class="deck-footer"><span>直方图、向上累计和向下累计</span><span class="slide-number" data-current="9" data-total="10"></span></div>
+  </section>
+
+  <section class="slide" data-title="课堂快练">
+    <p class="kicker">收束练习</p>
+    <h2 class="slide-title">最后用 7 道快问快答串起全套知识点</h2>
+    <table class="dense-table final-table">
+      <thead><tr><th>题目</th><th>参考答案</th><th>考查点</th></tr></thead>
+      <tbody>
+        <tr><td>研究某班成绩，抽取 10 名学生。样本是什么？</td><td>抽取的 10 名学生组成的集合</td><td>总体、个体、样本</td></tr>
+        <tr><td>性别用 1、2 编码，是什么尺度？</td><td>定类尺度</td><td>数字编码不等于数值型数据</td></tr>
+        <tr><td>产品等级是一等品、二等品、三等品，是什么标志？</td><td>品质标志</td><td>品质标志可有顺序</td></tr>
+        <tr><td>企业每月统一上报销售额，是什么组织形式？</td><td>统计报表</td><td>制度化、定期上报</td></tr>
+        <tr><td>“普查一定没有误差”对不对？</td><td>不对，仍可能有登记性误差</td><td>普查与误差</td></tr>
+        <tr><td>收入组距不同，比较各组多少人时看什么？</td><td>频数密度</td><td>不等距分组</td></tr>
+        <tr><td>“80 分及以上有多少人”用哪种累计？</td><td>向下累计</td><td>不低于、以上累计</td></tr>
+      </tbody>
+    </table>
+    <div class="rule-band closing"><strong>记忆口诀：</strong><span>对象先界定，尺度看能比；标志看性质，调查看范围；分组重互斥，累计看方向。</span></div>
+    <aside class="notes">结尾可以让学生先口答，再显示答案。也可以把这页作为课堂小测使用。</aside>
+    <div class="deck-footer"><span>课堂快练</span><span class="slide-number" data-current="10" data-total="10"></span></div>
+  </section>
+</main>
+
+<script src="assets/runtime.js"></script>
+</body>
+</html>

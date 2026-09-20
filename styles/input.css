@@ -1,0 +1,25 @@
+@import "tailwindcss" source(none);
+@import "./huibara-theme.css";
+@source "../index.html";
+@source "../js/*.js";
+
+@layer base {
+  /* Native hidden/dialog behavior must outrank display utilities across browsers. */
+  [hidden] { display: none !important; }
+  dialog:not([open]) { display: none; }
+  button, select { cursor: pointer; }
+  button:disabled { cursor: not-allowed; }
+  :focus-visible { outline: 2px solid var(--color-brand); outline-offset: 3px; }
+  ::selection { background: var(--color-brand-soft); }
+}
+
+@layer components {
+  /* Visual theme overrides keep the catalog templates and JavaScript stable. */
+  .group.rounded-card:hover { border-color: var(--color-card-line) !important; background-color: var(--color-card-hover) !important; }
+  .resource-row { background-color: var(--color-surface); }
+  .resource-row:hover { background-color: var(--color-hover) !important; }
+  .resource-row [data-read]:hover { color: var(--color-brand); }
+  .border-brand.bg-brand-soft { border-color: var(--color-chapter-line) !important; }
+  /* Category cards stay on one line: touch widths scroll horizontally, desktop widths share the row. */
+  #collections { scrollbar-width: thin; scrollbar-color: var(--color-line) transparent; }
+}

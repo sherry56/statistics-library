@@ -1,0 +1,20 @@
+{
+  "name": "huibara-statistics-library",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/vendor.cjs && tailwindcss -i ./styles/input.css -o ./assets/library.css --minify",
+    "prepare:pages": "node scripts/prepare-pages.cjs",
+    "watch": "tailwindcss -i ./styles/input.css -o ./assets/library.css --watch",
+    "test": "node --test tests/*.test.cjs",
+    "audit": "node scripts/audit.cjs",
+    "preview": "node scripts/serve.cjs"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.3",
+    "tailwindcss": "4.3.3"
+  },
+  "dependencies": {
+    "pdfjs-dist": "6.3.289"
+  }
+}

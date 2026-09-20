@@ -1,0 +1,18 @@
+/* Only reader-specific rules remain native: top-layer dialog, iframe sizing,
+   scrollable PDF canvas, and dialog-specific layout. */
+.reader-dialog[open] { display: flex; flex-direction: column; }
+.reader-dialog.reader-expanded { inset: 0; margin: 0; width: 100vw; max-width: none; height: 100dvh; border-radius: 0; }
+.pdf-stage { position: relative; flex: 1; min-height: 0; overflow: auto; padding: 16px; }
+.pdf-stage canvas { display: block; margin: auto; background: white; }
+.pdf-status { position: absolute; inset: 32px; text-align: center; }
+#readerBody iframe { display: block; width: 100%; height: 100%; border: 0; background: white; }
+.pptx-viewer { display: flex; flex-direction: column; height: 100%; background: var(--color-reader-canvas); color: var(--color-ink); }
+.pptx-controls { display: flex; flex-shrink: 0; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; padding: 8px; background: var(--color-ink); border-top: 1px solid var(--color-line); }
+.viewer-btn { min-width: 36px; height: 36px; padding: 0 8px; border: 1px solid var(--color-muted); border-radius: 6px; background: #3a453e; color: var(--color-surface); font-size: 12px; }
+.viewer-btn:hover { background: var(--color-brand); }
+.viewer-btn:disabled { opacity: .35; }
+.pptx-page { display: flex; align-items: center; gap: 8px; font-size: 12px; white-space: nowrap; }
+.pptx-page input { width: 48px; height: 36px; border: 1px solid var(--color-muted); border-radius: 6px; background: var(--color-ink); color: var(--color-surface); text-align: center; }
+@media (max-width: 640px) {
+  .pptx-controls { gap: 4px; }
+}

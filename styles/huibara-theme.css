@@ -1,0 +1,51 @@
+/* Shared Huibara Lab theme. Import after Tailwind in any future host project. */
+@theme static {
+  --color-canvas: #f6f7f4;
+  --color-surface: #ffffff;
+  --color-soft: #eff2ed;
+  --color-ink: #252925;
+  --color-muted: #747b74;
+  --color-line: #e1e5df;
+  --color-brand: #3f6252;
+  --color-brand-hover: #304c40;
+  --color-brand-soft: #e9f0ec;
+  --color-hover: #fafbf9;
+  --color-card-hover: #fcfdfc;
+  --color-card-line: #c9d4cd;
+  --color-chapter-line: #cad8d0;
+  --color-search-line: #dde3dd;
+  --color-logo-line: #cbd5ce;
+  --color-reader-canvas: #f1f3f0;
+
+  /* Quiet semantic accents shared by badges, status text and file formats. */
+  --color-success: #5e786a;
+  --color-success-soft: #edf3ef;
+  --color-warning: #9a7657;
+  --color-warning-soft: #f5efe9;
+  --color-danger: #a06464;
+  --color-danger-soft: #f7eeee;
+  /* Low-saturation supporting inks: reserve these for metadata accents. */
+  --color-terracotta: #9a6458;
+  --color-terracotta-soft: #f4ebe8;
+  --color-slate-blue: #627487;
+  --color-slate-blue-soft: #edf1f4;
+  --color-ochre: #91713c;
+  --color-ochre-soft: #f5f0e4;
+  --color-file-pdf: #a06464;
+  --color-file-pdf-soft: #f7eeee;
+  --color-file-ppt: #9a7657;
+  --color-file-ppt-soft: #f5efe9;
+  --color-file-sheet: #5e786a;
+  --color-file-sheet-soft: #edf3ef;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-book: Georgia, "Songti SC", "STSong", serif;
+  --container-library: 72rem;
+  --container-search: 46rem;
+  --radius-control: 0.5rem;
+  --radius-card: 0.625rem;
+  --radius-dialog: 0.75rem;
+  --shadow-hover: 0 2px 8px rgb(37 41 37 / 0.025);
+  --shadow-dialog: 0 24px 80px rgb(37 41 37 / 0.18);
+  --shadow-book: 0 8px 16px rgb(37 41 37 / 0.12);
+  --spacing: 0.25rem;
+}
