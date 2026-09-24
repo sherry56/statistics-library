@@ -2,9 +2,9 @@
 const $ = selector => document.querySelector(selector);
 const categories = {
   '课件': '按章节整理的课堂课件',
+  '教材': '课程教材与配套学习指导',
   '题库': '章节练习、综合题与错题解析',
-  '复习大纲': '考点、讲义与专题总结',
-  '教材': '课程教材与配套学习指导'
+  '复习大纲': '考点、讲义与专题总结'
 };
 // Keep the release scope in one place so cards, search, recent updates, and
 // actions agree. Review materials are open only for the two PDF paths below.
