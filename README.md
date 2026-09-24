@@ -83,7 +83,7 @@ UI patterns：Primary = `UI.button + UI.primary`；Secondary = `UI.button + UI.s
 - HTTP 下 PDF 使用本地 PDF.js 读取原始 PDF，避免内置浏览器 PDF 插件空白；文件内容不上传到第三方。`file://` 直接打开时保留原生 iframe PDF 回退，其效果取决于浏览器。
 - HTML 使用原文件 iframe；Markdown、XLSX、XMIND 保留现有 HTML 阅读副本。PDF 使用本地 PDF.js 在线阅读，下载始终指向原始文件。
 - 原生 dialog 提供 Escape、Tab 焦点约束、关闭后焦点返回；PPTX 的 PDF 预览与原始 PPTX 下载保持分离。
-- 下载验证现在要求输入 8 位学号和名单中的姓名，名单来自 `教师页面.pdf`（BST200-04）与 `教师页面2.pdf`（BST200-08），共 122 名去重学生；公开部署时名单通过 Cloudflare Pages Secret `ROSTER_JSON` 提供给 `functions/api/verify.js`，不进入公开 GitHub 仓库。
+- 下载验证现在要求输入 8 位学号和名单中的姓名，名单来自 `教师页面.pdf`（BST200-04）与 `教师页面2.pdf`（BST200-08），并包含课程名单补录，共 124 名去重学生；公开部署时名单通过 Cloudflare Pages Secret `ROSTER_JSON` 提供给 `functions/api/verify.js`，不进入公开 GitHub 仓库。
 - 本地名单文件 `resources/roster.js` 已加入 `.gitignore`，仅用于本地核对；公开 Pages 部署使用服务端接口验证。静态资源 URL 本身仍属于公开站点资源，若需要强制阻止绕过下载，还应把文件移至 R2 并由服务端签发短时下载链接。
 
 ## 使用统计

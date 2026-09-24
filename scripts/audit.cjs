@@ -5,7 +5,7 @@ const privateRosterPath = path.join(root, 'private', 'roster.js');
 const publicRosterPath = path.join(root, 'resources', 'roster.js');
 if (fs.existsSync(privateRosterPath)) {
   const roster = vm.runInNewContext(fs.readFileSync(privateRosterPath,'utf8') + ';LibraryRoster');
-  assert.equal(roster.size, 122, 'Unexpected private roster size');
+  assert.equal(roster.size, 124, 'Unexpected private roster size');
   assert.equal(new Set(roster.entries.map(item => item.studentId)).size, roster.size, 'Duplicate student ID');
 }
 assert.ok(!fs.existsSync(publicRosterPath) || fs.existsSync(privateRosterPath), 'Public roster must not contain student PII');
