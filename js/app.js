@@ -233,6 +233,23 @@ document.addEventListener('keydown', event => {
     event.preventDefault(); (activeCategory ? $('#searchInput') : $('#globalSearch')).focus();
   }
 });
+const courseModeButtons = [...document.querySelectorAll('[data-course-mode]')];
+const courseModePanels = [...document.querySelectorAll('[data-course-panel]')];
+function setCourseMode(mode) {
+  if (!['offline', 'digital'].includes(mode)) return;
+  courseModeButtons.forEach(button => {
+    const selected = button.dataset.courseMode === mode;
+    button.setAttribute('aria-pressed', String(selected));
+    button.classList.toggle('bg-brand-soft', selected);
+    button.classList.toggle('text-brand', selected);
+    button.classList.toggle('text-muted', !selected);
+    button.classList.toggle('hover:bg-soft', !selected);
+    button.classList.toggle('hover:text-ink', !selected);
+  });
+  courseModePanels.forEach(panel => { panel.hidden = panel.dataset.coursePanel !== mode; });
+}
+courseModeButtons.forEach(button => button.addEventListener('click', () => setCourseMode(button.dataset.courseMode)));
+setCourseMode('offline');
 window.addEventListener('hashchange', route);
 renderHome(); route();
 trackStat('site_view');

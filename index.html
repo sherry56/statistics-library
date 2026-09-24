@@ -12,7 +12,7 @@
   <script defer src="js/ui.js"></script>
   <script defer src="js/pdf-reader.js"></script>
   <script defer src="js/reader.js"></script>
-  <script defer src="js/app.js"></script>
+  <script defer src="js/app.js?v=20260924-course-modes1"></script>
 </head>
 <body class="flex min-h-dvh flex-col bg-canvas font-sans text-sm leading-relaxed text-ink antialiased">
   <a href="#main" class="sr-only z-50 rounded-control bg-surface p-4 focus:not-sr-only focus:fixed focus:left-4 focus:top-4">跳到主要内容</a>
@@ -44,7 +44,14 @@
       <div id="homeBrowse">
         <section aria-labelledby="categoryHeading"><div class="mb-4 flex items-baseline justify-between"><h2 id="categoryHeading" class="text-base font-semibold">按分类浏览</h2><span class="text-xs text-muted">当前开放：课件、教材、复习资料（2 份）</span></div><div id="collections" class="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 lg:overflow-visible lg:pb-0"></div></section>
         <section class="mb-8 mt-8 sm:mb-10 sm:mt-12" aria-labelledby="courseInfoHeading">
-          <div class="mb-4 flex items-baseline justify-between"><h2 id="courseInfoHeading" class="text-base font-semibold">课程说明</h2></div>
+          <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+            <h2 id="courseInfoHeading" class="text-base font-semibold">课程说明</h2>
+            <div class="inline-flex items-center gap-1 rounded-full border border-line bg-surface p-1" role="group" aria-label="选择班级">
+              <button type="button" data-course-mode="offline" aria-controls="courseInfoOffline" aria-pressed="true" class="rounded-full bg-brand-soft px-3 py-1.5 text-xs font-medium text-brand transition-colors">线下班</button>
+              <button type="button" data-course-mode="digital" aria-controls="courseInfoDigital" aria-pressed="false" class="rounded-full px-3 py-1.5 text-xs font-medium text-muted transition-colors hover:bg-soft hover:text-ink">数字班</button>
+            </div>
+          </div>
+          <div id="courseInfoOffline" data-course-panel="offline" role="group" aria-label="线下班课程说明">
           <div class="grid gap-4 sm:grid-cols-3">
             <article class="rounded-card border border-line bg-surface p-5 sm:p-6">
               <div class="flex items-start justify-between gap-4"><div><p class="text-[10px] uppercase tracking-[0.18em] text-muted">Assessment</p><h2 class="mt-2 text-base font-semibold">课程考核方式</h2></div><span class="rounded-full bg-ochre-soft px-2.5 py-1 text-[10px] text-ochre">课程说明</span></div>
@@ -61,6 +68,28 @@
               <p class="mt-4 text-sm leading-6 text-muted">课程咨询、作业问题与答疑，请加入课程 QQ 群；资料更新或下载异常也可在群内反馈。</p>
               <span class="mt-3 inline-flex max-w-full break-all text-sm font-medium text-brand">课程 QQ 群：1125544485</span>
             </article>
+          </div>
+          </div>
+          <div id="courseInfoDigital" data-course-panel="digital" role="group" aria-label="数字班课程说明" hidden>
+            <div class="grid gap-4 sm:grid-cols-3">
+              <article class="rounded-card border border-line bg-surface p-5 sm:p-6">
+                <div class="flex items-start justify-between gap-4"><div><p class="text-[10px] uppercase tracking-[0.18em] text-muted">Assessment</p><h3 class="mt-2 text-base font-semibold">课程考核方式</h3></div><span class="rounded-full bg-slate-blue-soft px-2.5 py-1 text-[10px] text-slate-blue">线上课程</span></div>
+                <p class="mt-4 text-sm leading-6 text-ink">总评按平时成绩 <strong class="font-semibold text-brand">40%</strong>、期末考试 <strong class="font-semibold text-brand">60%</strong> 计算。</p>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs text-muted"><span class="rounded-full border border-line bg-canvas px-3 py-1.5">作业 2 分</span><span class="rounded-full border border-line bg-canvas px-3 py-1.5">报告 1.5 分</span><span class="rounded-full border border-line bg-canvas px-3 py-1.5">网课 0.5 分</span><span class="rounded-full border border-line bg-canvas px-3 py-1.5">期末 6 分</span></div>
+                <p class="mt-4 text-xs leading-5 text-muted">进入平台搜索“统计学”并报名观看。视频观看记录完整得 0.5 分；未完整时按完成率计分：≥80% 得 0.4 分，≥70% 得 0.3 分，≥60% 得 0.2 分，≥50% 得 0.1 分，低于 50% 得 0 分。</p>
+                <a href="http://icourse.swufe.edu.cn/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex min-h-10 max-w-full items-center break-all rounded-control bg-brand px-4 py-2 text-xs font-medium text-white hover:bg-brand-hover" aria-label="进入线上课程平台，搜索统计学并报名观看">进入线上课程 ↗</a>
+              </article>
+              <article class="rounded-card border border-line bg-surface p-5 sm:p-6">
+                <div class="flex flex-wrap items-start justify-between gap-4"><div><p class="text-[10px] uppercase tracking-[0.18em] text-muted">Assignments</p><h3 class="mt-2 text-base font-semibold">作业内容</h3></div><span class="rounded-full bg-brand-soft px-2.5 py-1 text-[10px] text-brand">平时成绩</span></div>
+                <p class="mt-4 text-sm leading-6 text-muted">课程在线作业约 9 次，通过数苑科技在线习题系统完成；另需完成 2 个报告，并在在线讨论区参与不少于 5 次讨论。</p>
+                <div class="mt-4 flex flex-wrap items-center gap-3"><a href="http://bctest.swufe.edu.cn/" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-10 items-center rounded-control bg-brand px-4 py-2 text-xs font-medium text-white hover:bg-brand-hover">进入数苑 ↗</a><span class="rounded-control border border-line bg-canvas px-3 py-2 text-xs text-muted">报告 1.5 分</span></div>
+              </article>
+              <article class="rounded-card border border-line bg-surface p-5 sm:p-6">
+                <div class="flex items-start justify-between gap-4"><div><p class="text-[10px] uppercase tracking-[0.18em] text-muted">Contact</p><h3 class="mt-2 text-base font-semibold">联系方式</h3></div><span class="rounded-full bg-brand-soft px-2.5 py-1 text-[10px] text-brand">需要帮助</span></div>
+                <p class="mt-4 text-sm leading-6 text-muted">课程咨询、作业问题与答疑，请加入课程 QQ 群；资料更新或下载异常也可在群内反馈。</p>
+                <span class="mt-3 inline-flex max-w-full break-all text-sm font-medium text-brand">课程 QQ 群：1125544485</span>
+              </article>
+            </div>
           </div>
         </section>
         <section class="mt-8 sm:mt-12" aria-labelledby="recentHeading"><div class="mb-4 flex flex-wrap items-baseline justify-between gap-2"><h2 id="recentHeading" class="text-base font-semibold">最近更新</h2><span class="text-xs text-muted">仅显示已开放的资料</span></div><div id="recentList" class="overflow-hidden rounded-card border border-line bg-surface"></div><p id="recentEmpty" class="py-4 text-xs text-muted" hidden>暂时没有可确认更新时间的资料。</p></section>
