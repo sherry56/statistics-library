@@ -179,8 +179,8 @@ $('#verifyForm').addEventListener('submit', async event => {
   const studentName = $('#studentName').value.trim();
   $('#studentId').removeAttribute('aria-invalid');
   $('#studentName').removeAttribute('aria-invalid');
-  if (!/^\d{8}$/.test(studentId)) {
-    $('#fieldMessage').textContent = '请输入 8 位数字学号。';
+  if (!/^(?:\d{8}|admin)$/i.test(studentId)) {
+    $('#fieldMessage').textContent = '请输入 8 位数字学号或管理员账号。';
     $('#fieldMessage').classList.add('text-file-pdf');
     $('#studentId').setAttribute('aria-invalid', 'true'); $('#studentId').focus(); return;
   }

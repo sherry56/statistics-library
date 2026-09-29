@@ -1,4 +1,7 @@
-const normalizeId = value => String(value ?? '').replace(/\s+/g, '');
+const normalizeId = value => {
+  const id = String(value ?? '').replace(/\s+/g, '');
+  return id.toLocaleLowerCase() === 'admin' ? 'admin' : id;
+};
 const normalizeName = value => String(value ?? '').trim().replace(/\s+/g, ' ').toLocaleUpperCase();
 
 export async function onRequestPost({ request, env }) {
@@ -11,7 +14,7 @@ export async function onRequestPost({ request, env }) {
 
   const studentId = normalizeId(body?.studentId);
   const studentName = normalizeName(body?.studentName);
-  if (!/^\d{8}$/.test(studentId) || !studentName) {
+  if ((!/^\d{8}$/.test(studentId) && studentId !== 'admin') || !studentName) {
     return Response.json({ ok: false, error: 'invalid_input' }, { status: 400 });
   }
 

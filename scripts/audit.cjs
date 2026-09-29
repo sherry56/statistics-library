@@ -5,8 +5,9 @@ const privateRosterPath = path.join(root, 'private', 'roster.js');
 const publicRosterPath = path.join(root, 'resources', 'roster.js');
 if (fs.existsSync(privateRosterPath)) {
   const roster = vm.runInNewContext(fs.readFileSync(privateRosterPath,'utf8') + ';LibraryRoster');
-  assert.equal(roster.size, 124, 'Unexpected private roster size');
-  assert.equal(new Set(roster.entries.map(item => item.studentId)).size, roster.size, 'Duplicate student ID');
+  const students = roster.entries.filter(item => /^\d{8}$/.test(item.studentId));
+  assert.equal(students.length, 124, 'Unexpected private student roster size');
+  assert.equal(new Set(students.map(item => item.studentId)).size, students.length, 'Duplicate student ID');
 }
 assert.ok(!fs.existsSync(publicRosterPath) || fs.existsSync(privateRosterPath), 'Public roster must not contain student PII');
 assert.ok(items.every(item => item.category !== '课程安排'), 'Removed category still present in catalog');
