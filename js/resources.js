@@ -174,6 +174,21 @@ const resources = [
     "updatedSource": "site-update"
   },
   {
+    "title": "第四章 4.5.1 单项选择题 · 答案与详解",
+    "category": "题库",
+    "format": "PDF",
+    "path": "resources/question-bank/第四章4.5.1单项选择题答案与详解.pdf",
+    "desc": "配套学习指导书第4章4.5.1节的20道单项选择题，含逐题解题步骤与计算过程。",
+    "tags": [
+      "第4章",
+      "时间序列分析",
+      "单项选择题",
+      "详细解析"
+    ],
+    "updatedAt": "2026-09-29T00:00:00+08:00",
+    "updatedSource": "site-update"
+  },
+  {
     "title": "数苑 · 第五章",
     "category": "题库",
     "format": "PDF",
