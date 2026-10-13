@@ -386,7 +386,7 @@ const resources = [
       "时间序列",
       "指数分析"
     ],
-    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedAt": "2026-10-13T00:00:00+08:00",
     "updatedSource": "site-update"
   },
   {
