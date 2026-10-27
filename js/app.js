@@ -237,7 +237,8 @@ document.addEventListener('keydown', event => {
 const courseModeButtons = [...document.querySelectorAll('[data-course-mode]')];
 const courseModePanels = [...document.querySelectorAll('[data-course-panel]')];
 function setCourseMode(mode) {
-  if (!['offline', 'digital'].includes(mode)) return;
+  if (!['offline', 'digital', 'clone'].includes(mode)) return;
+  const contentMode = mode === 'clone' ? 'digital' : mode;
   courseModeButtons.forEach(button => {
     const selected = button.dataset.courseMode === mode;
     button.setAttribute('aria-pressed', String(selected));
@@ -247,7 +248,7 @@ function setCourseMode(mode) {
     button.classList.toggle('hover:bg-soft', !selected);
     button.classList.toggle('hover:text-ink', !selected);
   });
-  courseModePanels.forEach(panel => { panel.hidden = panel.dataset.coursePanel !== mode; });
+  courseModePanels.forEach(panel => { panel.hidden = panel.dataset.coursePanel !== contentMode; });
 }
 courseModeButtons.forEach(button => button.addEventListener('click', () => setCourseMode(button.dataset.courseMode)));
 setCourseMode('offline');
