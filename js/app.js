@@ -249,6 +249,10 @@ function setCourseMode(mode) {
     button.classList.toggle('hover:text-ink', !selected);
   });
   courseModePanels.forEach(panel => { panel.hidden = panel.dataset.coursePanel !== contentMode; });
+  document.querySelectorAll('[data-course-details]').forEach(detail => {
+    detail.hidden = detail.dataset.courseDetails !== mode;
+  });
+  $('#digitalCourseBadge').textContent = mode === 'clone' ? '克隆班' : '线上课程';
 }
 courseModeButtons.forEach(button => button.addEventListener('click', () => setCourseMode(button.dataset.courseMode)));
 setCourseMode('offline');
