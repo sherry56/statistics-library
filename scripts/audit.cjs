@@ -5,7 +5,7 @@ const privateRosterPath = path.join(root, 'private', 'roster.js');
 const publicRosterPath = path.join(root, 'resources', 'roster.js');
 if (fs.existsSync(privateRosterPath)) {
   const roster = vm.runInNewContext(fs.readFileSync(privateRosterPath,'utf8') + ';LibraryRoster');
-  const students = roster.entries.filter(item => /^\d{8}$/.test(item.studentId));
+  const students = roster.entries.filter(item => /^\d{8}$/.test(item.studentId) && item.section !== '公用账号');
   assert.equal(students.length, 124, 'Unexpected private student roster size');
   assert.equal(new Set(students.map(item => item.studentId)).size, students.length, 'Duplicate student ID');
 }
