@@ -6,18 +6,23 @@ const categories = {
   '题库': '章节练习、综合题与错题解析',
   '复习大纲': '考点、讲义与专题总结'
 };
-// Keep the release scope in one place so cards, search, recent updates, and
-// actions agree. Review materials are open only for the PDF paths below.
+// Keep the release scope consistent across cards, search, recent updates,
+// and resource actions.
 const openCategories = new Set(['课件', '教材', '题库', '复习大纲']);
-const openResourcePaths = new Set([
+const openReviewPaths = new Set([
   'resources/review/统计学基础知识点-html演示/统计学重点知识点1-3章.pdf',
   'resources/review/统计学重难点与易混淆点-html演示/统计学重难点与易混淆点梳理.pdf',
   'resources/review/时间序列分析与指数分析重点总结.pdf'
 ]);
-const recentPinnedPaths = new Set(openResourcePaths);
+const openQuestionBankPaths = new Set([
+  'resources/question-bank/第四章4.5.1与4.5.2选择题答案与详解.pdf',
+  'resources/question-bank/第5章统计指数计算题参考答案.pdf'
+]);
+const recentPinnedPaths = new Set(openReviewPaths);
 const isCategoryOpen = category => openCategories.has(category);
 const isResourceOpen = item => !!item && isCategoryOpen(item.category)
-  && (item.category !== '复习大纲' || openResourcePaths.has(item.path));
+  && (item.category !== '复习大纲' || openReviewPaths.has(item.path))
+  && (item.category !== '题库' || openQuestionBankPaths.has(item.path));
 const openResources = () => resources.filter(isResourceOpen);
 const recentOpenResources = () => {
   const visible = openResources();
