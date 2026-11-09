@@ -449,14 +449,14 @@ const resources = [
     "title": "《统计学》第 3 版配套教材",
     "category": "教材",
     "format": "PDF",
-    "path": "resources/textbooks/14549528 (向蓉美，王青华主编, 向蓉美,王青华主编, 向蓉美, 王青华) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
-    "available": false,
-    "desc": "向蓉美、王青华主编的课程配套教材。",
+    "path": "resources/textbooks/《统计学》第3版配套教材.pdf",
+    "desc": "配套教材彩色扫描版（压缩后，241页）。",
     "tags": [
       "教材",
-      "PDF"
+      "PDF",
+      "扫描版"
     ],
-    "updatedAt": "2026-09-20T00:00:00+08:00",
+    "updatedAt": "2026-10-13T00:00:00+08:00",
     "updatedSource": "site-update"
   },
 ];
