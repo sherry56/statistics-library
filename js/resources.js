@@ -203,6 +203,21 @@ const resources = [
     "updatedSource": "site-update"
   },
   {
+    "title": "第5章统计指数计算题参考答案",
+    "category": "题库",
+    "format": "PDF",
+    "path": "resources/question-bank/第5章统计指数计算题参考答案.pdf",
+    "desc": "第5章统计指数第1—5道计算题的参考答案。",
+    "tags": [
+      "第5章",
+      "统计指数",
+      "计算题",
+      "参考答案"
+    ],
+    "updatedAt": "2026-11-09T00:00:00+08:00",
+    "updatedSource": "site-update"
+  },
+  {
     "title": "数苑 · 第六章",
     "category": "题库",
     "format": "PDF",

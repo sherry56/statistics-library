@@ -8,7 +8,7 @@ const categories = {
 };
 // Keep the release scope in one place so cards, search, recent updates, and
 // actions agree. Review materials are open only for the PDF paths below.
-const openCategories = new Set(['课件', '教材', '复习大纲']);
+const openCategories = new Set(['课件', '教材', '题库', '复习大纲']);
 const openResourcePaths = new Set([
   'resources/review/统计学基础知识点-html演示/统计学重点知识点1-3章.pdf',
   'resources/review/统计学重难点与易混淆点-html演示/统计学重难点与易混淆点梳理.pdf',
